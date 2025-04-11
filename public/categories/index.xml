@@ -6,6 +6,14 @@
     <description>Recent content in Categories on rodpcastro</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 11 Apr 2025 00:07:24 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech</title>
+      <link>http://localhost:1313/categories/tech/</link>
+      <pubDate>Fri, 11 Apr 2025 00:07:24 -0300</pubDate>
+      <guid>http://localhost:1313/categories/tech/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

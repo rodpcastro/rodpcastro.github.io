@@ -6,6 +6,8 @@ cover:
     image: jupyter_logo.png
     alt: 'jupyter logo'
     caption: 'jupyter'
+tags: ["jupyter", "python"]
+categories: ["tech"]
 ---
 
 # Title

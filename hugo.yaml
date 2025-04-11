@@ -3,18 +3,27 @@ languageCode: en-us
 title: rodpcastro
 theme: PaperMod
 
+params:
+  homeInfoParams:
+    Title: "Hello"
+    Content: "Welcome to my blog"
+  socialIcons:
+    - name: github
+      url: https://github.com/rodpcastro/
+  ShowPostNavLinks: true
+
 menu:
   main:
-    - identifier: blog
-      name: Blog
-      url: /blog/
+    - identifier: archives 
+      name: Archives
+      url: /archives/
       weight: 10
-    - identifier: projects
-      name: Projects
-      url: /projects/
+    - identifier: categories
+      name: Categories
+      url: /categories/
       weight: 20
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 20
+    - identifier: tags
+      name: Tags 
+      url: /tags/
+      weight: 30
 

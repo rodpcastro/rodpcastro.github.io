@@ -2,19 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-04-11T02:50:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-04-11T02:50:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/second/</loc>
+    <lastmod>2025-04-11T02:50:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-04-11T00:07:24-03:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/first/</loc>
     <lastmod>2025-04-11T00:07:24-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/tags/jupyter/</loc>
     <lastmod>2025-04-11T00:07:24-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-04-11T00:07:24-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-11T00:07:24-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/tech/</loc>
     <lastmod>2025-04-11T00:07:24-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/archives/</loc>
   </url>
 </urlset>
