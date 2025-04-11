@@ -2,3 +2,19 @@ baseURL: https://rodpcastro.github.io/
 languageCode: en-us
 title: rodpcastro
 theme: PaperMod
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 10
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 20
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 20
+
