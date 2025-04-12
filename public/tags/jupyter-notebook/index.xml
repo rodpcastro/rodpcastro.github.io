@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Python on rodpcastro</title>
-    <link>http://localhost:1313/tags/python/</link>
-    <description>Recent content in Python on rodpcastro</description>
+    <title>Jupyter Notebook on rodpcastro</title>
+    <link>http://localhost:1313/tags/jupyter-notebook/</link>
+    <description>Recent content in Jupyter Notebook on rodpcastro</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/jupyter-notebook/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nodimo</title>
       <link>http://localhost:1313/projects/nodimo/</link>
       <pubDate>Sat, 12 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/nodimo/</guid>
       <description>Nodimo turns a dimensional relationship between quantities into a dimensionless expression.</description>
-    </item>
-    <item>
-      <title>First</title>
-      <link>http://localhost:1313/posts/first/</link>
-      <pubDate>Fri, 11 Apr 2025 00:07:24 -0300</pubDate>
-      <guid>http://localhost:1313/posts/first/</guid>
-      <description>&lt;h1 id=&#34;title&#34;&gt;Title&lt;/h1&gt;
-&lt;h2 id=&#34;subtitle&#34;&gt;Subtitle&lt;/h2&gt;
-&lt;p&gt;paragraph
-paragraph 2&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

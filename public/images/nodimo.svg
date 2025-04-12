@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="121.00002mm"
+   height="34.989723mm"
+   viewBox="0 0 242.00016 69.979478"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="nodimo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="297.69195"
+     inkscape:cy="107.12668"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1">
+    <inkscape:grid
+       id="grid1"
+       units="mm"
+       originx="-303.53977"
+       originy="-1.2407334"
+       spacingx="0.99999998"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="false" />
+    <inkscape:page
+       x="-7.5005551e-07"
+       y="-1.0702829e-05"
+       width="242.00017"
+       height="69.979477"
+       id="page1"
+       margin="1"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <rect
+     style="fill:none;stroke:#2b8cee;stroke-width:0.767971;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4-4-3-4-7-2-3"
+     width="9.5995646"
+     height="9.5995789"
+     x="-39.789913"
+     y="30.19001"
+     transform="matrix(2.5498893e-6,-1,1,-1.5707055e-6,0,0)"
+     inkscape:label="rect6" />
+  <rect
+     style="fill:none;stroke:#2b8cee;stroke-width:1.11862;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4-4-98-7-0-9"
+     width="13.982741"
+     height="13.98274"
+     x="-29.456501"
+     y="37.098263"
+     transform="matrix(0.30901942,-0.95105573,0.951057,0.3090155,0,0)"
+     inkscape:label="rect5" />
+  <rect
+     style="fill:none;stroke:#2b8cee;stroke-width:1.62938;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4-4-0-9-8"
+     width="20.367281"
+     height="20.367252"
+     x="-17.9251"
+     y="38.690128"
+     transform="matrix(0.58778693,-0.80901577,0.80901763,0.58778437,0,0)"
+     inkscape:label="rect4" />
+  <rect
+     style="fill:none;stroke:#2b8cee;stroke-width:2.37336;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4-4-03-07"
+     width="29.667002"
+     height="29.666943"
+     x="-7.0934405"
+     y="34.040272"
+     transform="matrix(0.80901776,-0.5877842,0.58778549,0.80901682,0,0)"
+     inkscape:label="rect3" />
+  <rect
+     style="fill:none;stroke:#2b8cee;stroke-width:3.45703;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4-4-0"
+     width="43.212955"
+     height="43.212891"
+     x="0.85727799"
+     y="22.483175"
+     transform="rotate(-17.999972)"
+     inkscape:label="rect2" />
+  <rect
+     style="fill:none;stroke:#2b8cee;stroke-width:5.03551;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     id="rect4-4"
+     width="62.94397"
+     height="62.94397"
+     x="3.5177624"
+     y="3.5177619"
+     inkscape:label="rect1" />
+  <text
+     xml:space="preserve"
+     style="font-size:42.9646px;font-family:'Century Gothic';-inkscape-font-specification:'Century Gothic, Normal';fill:#2b8cee;fill-opacity:1;stroke:#2b8cee;stroke-width:2.93321;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+     x="80.912796"
+     y="50.807816"
+     id="text2"><tspan
+       sodipodi:role="line"
+       id="tspan2"
+       style="stroke-width:2.93321;stroke-dasharray:none"
+       x="80.912796"
+       y="50.807816">nodimo</tspan></text>
+</svg>

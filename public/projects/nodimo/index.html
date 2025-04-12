@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Hugo | rodpcastro</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/tags/hugo/">
+<title>Nodimo | rodpcastro</title>
+<meta name="keywords" content="Python, Jupyter Notebook, Sympy, Dimensional Analysis">
+<meta name="description" content="Nodimo turns a dimensional relationship between quantities into a dimensionless expression.">
+<meta name="author" content="Rodrigo Castro">
+<link rel="canonical" href="http://localhost:1313/projects/nodimo/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/hugo/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/hugo/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/nodimo/">
 <noscript>
     <style>
         #theme-toggle,
@@ -68,7 +67,7 @@
 
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -136,23 +135,102 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Hugo
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">rodpcastro.github.io
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Static site built with Hugo and deployed via GitHub Pages.</p>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Nodimo
+    </h1>
+    <div class="post-meta"><span title='2025-04-12 00:00:00 +0000 UTC'>April 12, 2025</span>&nbsp;·&nbsp;Rodrigo Castro
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#nodimo" aria-label="Nodimo">Nodimo</a><ul>
+                        
+                <li>
+                    <a href="#notes" aria-label="Notes">Notes</a></li>
+                <li>
+                    <a href="#installation" aria-label="Installation">Installation</a></li>
+                <li>
+                    <a href="#getting-started" aria-label="Getting started">Getting started</a><ul>
+                        
+                <li>
+                    <a href="#basic-example" aria-label="Basic example">Basic example</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p align="center">
+<img src="/images/nodimo.svg" alt="Nodimo">
+</p>
+<h1 id="nodimo">Nodimo<a hidden class="anchor" aria-hidden="true" href="#nodimo">#</a></h1>
+<p>The main purpose of Nodimo is to transform a dimensional relationship between quantities into a dimensionless one. This is done by grouping dimensional quantities into dimensionless products in such a way that the resulting number of products is always lower than or equal to the starting number of quantities. Therefore, the ensuing dimensionless model is, at the same time, a generalization and simplification of the dimensional model.</p>
+<p>Nodimo supports any number of dimensions and quantities. It can be used for applications in science, engineering, economics and finance. The resulting dimensionless relations can be used as the basis for further studies in similarity and model testing.</p>
+<h2 id="notes">Notes<a hidden class="anchor" aria-hidden="true" href="#notes">#</a></h2>
+<ul>
+<li>
+<p>The use of Nodimo requires basic knowledge of dimensional analysis, specially on choosing the appropriate set of scaling parameters and indentifying established dimensionless groups.</p>
+</li>
+<li>
+<p>It is recommended the use of <a href="https://jupyter.org/">jupyter notebook</a> for a better displaying of the results.</p>
+</li>
+</ul>
+<h2 id="installation">Installation<a hidden class="anchor" aria-hidden="true" href="#installation">#</a></h2>
+<p>Via <code>PyPI</code>, Nodimo is installed by:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip install nodimo
+</span></span></code></pre></div><p>Alternatively, via <code>Anaconda</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>conda install nodimo
+</span></span></code></pre></div><h2 id="getting-started">Getting started<a hidden class="anchor" aria-hidden="true" href="#getting-started">#</a></h2>
+<h3 id="basic-example">Basic example<a hidden class="anchor" aria-hidden="true" href="#basic-example">#</a></h3>
+<ul>
+<li>Simple pendulum</li>
+</ul>
+<p align="center">
+    <img src="/images/simple_pendulum.svg" alt="Simple Pendulum">
+</p>
+<p>The dimensionless relation between the pendulum&rsquo;s period <code>T</code> and the other quantities presented in the figure above is built and displayed as:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> nodimo <span style="color:#f92672">import</span> Quantity, Model
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>T <span style="color:#f92672">=</span> Quantity(<span style="color:#e6db74">&#39;T&#39;</span>, mass<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, length<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, time<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, dependent<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)  <span style="color:#75715e"># period</span>
+</span></span><span style="display:flex;"><span>L <span style="color:#f92672">=</span> Quantity(<span style="color:#e6db74">&#39;L&#39;</span>, mass<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, length<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, time<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, scaling<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)    <span style="color:#75715e"># length</span>
+</span></span><span style="display:flex;"><span>m <span style="color:#f92672">=</span> Quantity(<span style="color:#e6db74">&#39;m&#39;</span>, mass<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, length<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, time<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)                  <span style="color:#75715e"># mass</span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> Quantity(<span style="color:#e6db74">&#39;g&#39;</span>, mass<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, length<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, time<span style="color:#f92672">=-</span><span style="color:#ae81ff">2</span>, scaling<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)   <span style="color:#75715e"># gravity</span>
+</span></span><span style="display:flex;"><span>t0 <span style="color:#f92672">=</span> Quantity(<span style="color:#e6db74">&#39;theta_0&#39;</span>)                                     <span style="color:#75715e"># initial angle</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> Model(T, L, m, g, t0)
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>And the result is:</p>
+<p>$$\frac{T g^{\frac{1}{2}}}{L^{\frac{1}{2}}} = \Phi{\left(\theta_{0} \right)}$$</p>
+<p>For more applications and functionalities, check the <a href="https://nodimo.readthedocs.io/">documentation</a>.</p>
+<!-- Links -->
+
+
   </div>
-  <footer class="entry-footer"><span title='2025-04-11 00:00:00 +0000 UTC'>April 11, 2025</span>&nbsp;·&nbsp;Rodrigo Castro</footer>
-  <a class="entry-link" aria-label="post link to rodpcastro.github.io" href="http://localhost:1313/projects/rodpcastro/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/jupyter-notebook/">Jupyter Notebook</a></li>
+      <li><a href="http://localhost:1313/tags/sympy/">Sympy</a></li>
+      <li><a href="http://localhost:1313/tags/dimensional-analysis/">Dimensional Analysis</a></li>
+    </ul>
+
+  </footer>
 </article>
     </main>
     

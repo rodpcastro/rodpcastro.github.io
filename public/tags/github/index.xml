@@ -6,14 +6,14 @@
     <description>Recent content in GitHub on rodpcastro</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Apr 2025 20:20:39 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 11 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rodpcastro.github.io</title>
       <link>http://localhost:1313/projects/rodpcastro/</link>
-      <pubDate>Fri, 11 Apr 2025 20:20:39 -0300</pubDate>
+      <pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/rodpcastro/</guid>
-      <description>Static site built with Hugo, using the theme PaperMod, and deployed with GitHub Pages.</description>
+      <description>Static site built with Hugo and deployed via GitHub Pages.</description>
     </item>
   </channel>
 </rss>

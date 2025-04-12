@@ -12,6 +12,7 @@ params:
       url: https://github.com/rodpcastro/
   ShowPostNavLinks: true
   ShowToc: true
+  math: true
 
 menu:
   main:
@@ -36,3 +37,7 @@ menu:
       url: /search/
       weigth: 50
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
