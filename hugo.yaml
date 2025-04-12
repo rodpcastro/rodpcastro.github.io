@@ -6,7 +6,7 @@ theme: PaperMod
 params:
   homeInfoParams:
     Title: "rodpcastro"
-    Content: "This page showcases my progress in favorite topics and small projects I've developed."
+    Content: "This website showcases my progress in favorite topics and small projects I've developed."
   socialIcons:
     - name: github
       url: https://github.com/rodpcastro/
