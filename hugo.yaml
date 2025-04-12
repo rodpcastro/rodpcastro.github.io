@@ -5,25 +5,34 @@ theme: PaperMod
 
 params:
   homeInfoParams:
-    Title: "Hello"
-    Content: "Welcome to my blog"
+    Title: "rodpcastro"
+    Content: "This page showcases my progress in favorite topics and small projects I've developed."
   socialIcons:
     - name: github
       url: https://github.com/rodpcastro/
   ShowPostNavLinks: true
+  ShowToc: true
 
 menu:
   main:
-    - identifier: archives 
-      name: Archives
-      url: /archives/
+    - identifier: about 
+      name: About
+      url: /about/
       weight: 10
-    - identifier: categories
-      name: Categories
-      url: /categories/
+    - identifier: blog 
+      name: Blog
+      url: /posts/
       weight: 20
-    - identifier: tags
-      name: Tags 
-      url: /tags/
+    - identifier: projects 
+      name: Projects
+      url: /projects/
       weight: 30
+    - identifier: archives 
+      name: Archive
+      url: /archives/
+      weight: 40
+    - identifier: search
+      name: Search
+      url: /search/
+      weigth: 50
 

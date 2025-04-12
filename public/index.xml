@@ -6,8 +6,15 @@
     <description>Recent content on rodpcastro</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Apr 2025 02:50:00 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 11 Apr 2025 20:20:39 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rodpcastro.github.io</title>
+      <link>http://localhost:1313/projects/rodpcastro/</link>
+      <pubDate>Fri, 11 Apr 2025 20:20:39 -0300</pubDate>
+      <guid>http://localhost:1313/projects/rodpcastro/</guid>
+      <description>Static site built with Hugo, using the theme PaperMod, and deployed with GitHub Pages.</description>
+    </item>
     <item>
       <title>Second</title>
       <link>http://localhost:1313/posts/second/</link>
@@ -29,11 +36,11 @@ paragraph 2&lt;/p&gt;</description>
 paragraph 2&lt;/p&gt;</description>
     </item>
     <item>
-      <title>About</title>
+      <title>About me</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>about</description>
+      <description>Information about me.</description>
     </item>
   </channel>
 </rss>
