@@ -10,6 +10,7 @@ params:
   socialIcons:
     - name: github
       url: https://github.com/rodpcastro/
+  ShowAllPagesInArchive: true
   ShowPostNavLinks: true
   ShowToc: true
   math: true

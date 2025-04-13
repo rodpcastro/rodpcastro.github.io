@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="102mm"
-   height="82.40892mm"
-   viewBox="0 0 102 82.40892"
+   width="82mm"
+   height="66.327133mm"
+   viewBox="0 0 82 66.327133"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (86a8ad7, 2024-10-11)"
-   sodipodi:docname="simple_pendulum.svg"
+   sodipodi:docname="nodimo_simple_pendulum.svg"
    inkscape:export-filename="01_simple_pendulum.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -28,8 +28,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.3380612"
-     inkscape:cx="265.30924"
-     inkscape:cy="191.69527"
+     inkscape:cx="128.5442"
+     inkscape:cy="158.81187"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
@@ -59,8 +59,8 @@
     <inkscape:page
        x="0"
        y="0"
-       width="102"
-       height="82.40892"
+       width="82"
+       height="66.327133"
        id="page48"
        margin="1"
        bleed="0"
@@ -112,7 +112,7 @@
        inkscape:collect="always"
        xlink:href="#Bricks"
        id="pattern27"
-       patternTransform="matrix(0.01860421,0,0,0.01860421,-133.38534,-125.66509)"
+       patternTransform="matrix(0.01488337,0,0,0.01488337,-100.73598,-76.642824)"
        x="0"
        y="0"
        preserveAspectRatio="xMidYMid" />
@@ -179,12 +179,12 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="background"
-     transform="translate(58.885776,13.304225)">
+     transform="translate(58.885777,13.304225)">
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.558127;stroke-linecap:round;stroke-dasharray:1.11625, 2.23251"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.446502;stroke-linecap:round;stroke-dasharray:0.893, 1.78601"
        id="rect1"
-       width="100"
-       height="80.40892"
+       width="80"
+       height="64.327133"
        x="-57.885777"
        y="-12.304225"
        inkscape:label="white rectangle" />
@@ -193,47 +193,47 @@
      inkscape:label="drawing"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-28.861454,-118.44624)"
+     transform="translate(-28.861453,-118.44624)"
      style="display:inline">
     <path
        id="path11"
-       style="fill:none;stroke:#000000;stroke-width:0.558127;stroke-linecap:round;stroke-dasharray:1.11625, 2.23251;stroke-dashoffset:0"
-       d="m 74.587184,196.43202 v -70.9457"
+       style="fill:none;stroke:#000000;stroke-width:0.446502;stroke-linecap:round;stroke-dasharray:0.893, 1.78601;stroke-dashoffset:0"
+       d="M 65.642038,181.03486 V 124.2783"
        inkscape:label="centerline" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.930213;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
-       d="M 74.587425,125.48599 C 114.5478,184.10656 114.5478,184.10656 114.5478,184.10656"
+       style="fill:none;stroke:#000000;stroke-width:0.74417;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 65.642231,124.27804 c 31.9683,46.89646 31.9683,46.89646 31.9683,46.89646"
        id="path9"
        inkscape:label="string" />
     <rect
-       style="fill:url(#pattern27);fill-opacity:1;stroke:none;stroke-width:0.352701;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:url(#pattern27);fill-opacity:1;stroke:none;stroke-width:0.282161;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect11"
-       width="21.582525"
-       height="4.1792951"
-       x="63.796139"
-       y="121.30669"
+       width="17.26602"
+       height="3.343436"
+       x="57.009201"
+       y="120.9346"
        inkscape:label="support" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.558127;stroke-linecap:round;stroke-dasharray:1.11625, 2.23251;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#ConcaveTriangle)"
-       d="M 74.587184,196.43202 A 70.9476,70.9476 0 0 0 114.54712,184.10704"
+       style="fill:none;stroke:#000000;stroke-width:0.446502;stroke-linecap:round;stroke-dasharray:0.893, 1.78601;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#ConcaveTriangle)"
+       d="m 65.642038,181.03486 a 56.75808,56.75808 0 0 0 31.967949,-9.85998"
        id="path30"
        inkscape:label="path1" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.558127;stroke-linecap:round;stroke-dasharray:1.11625, 2.23251;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker31)"
-       d="m 34.627236,184.10704 a 70.9476,70.9476 0 0 0 39.959948,12.32498"
+       style="fill:none;stroke:#000000;stroke-width:0.446502;stroke-linecap:round;stroke-dasharray:0.893, 1.78601;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker31)"
+       d="m 33.674079,171.17488 a 56.75808,56.75808 0 0 0 31.967959,9.85998"
        id="path27"
        inkscape:label="path2" />
     <circle
-       style="fill:#6c6c6c;fill-opacity:1;stroke:none;stroke-width:0.558127;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#6c6c6c;fill-opacity:1;stroke:none;stroke-width:0.446502;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path10"
-       cx="114.54778"
-       cy="184.10655"
-       r="5.7604623"
+       cx="97.610519"
+       cy="171.17448"
+       r="4.6083698"
        inkscape:label="bob" />
     <g
        id="path32-3"
        inkscape:label="angle"
-       transform="matrix(1.8604209,0,0,1.8604209,-133.38534,-125.66509)">
+       transform="matrix(1.4883367,0,0,1.4883367,-100.73598,-76.642824)">
       <path
          style="color:#000000;fill:#000000;-inkscape-stroke:none"
          d="m 118.47461,144.80469 c -1.97093,1.3437 -4.3021,2.0625 -6.6875,2.0625 v 0.29883 c 2.44565,-1e-5 4.83475,-0.73564 6.85547,-2.11329 z"
@@ -251,8 +251,8 @@
       </g>
     </g>
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.558127;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker31)"
-       d="m 33.284626,125.74607 c 0,18.00799 0,18.00799 0,18.00799"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.446502;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker31)"
+       d="m 32.599991,124.4861 c 0,14.4064 0,14.4064 0,14.4064"
        id="path44"
        inkscape:label="gvector" />
   </g>
@@ -261,56 +261,56 @@
      id="layer2"
      inkscape:label="text"
      style="display:inline"
-     transform="translate(59.885776,14.304227)">
+     transform="translate(59.885777,14.304227)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.558127;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="-52.92561"
-       y="4.5162573"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.446502;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-54.117641"
+       y="0.95216042"
        id="text44"
        inkscape:label="g"><tspan
          sodipodi:role="line"
          id="tspan44"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.558127"
-         x="-52.92561"
-         y="4.5162573">g</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.446502"
+         x="-54.117641"
+         y="0.95216042">g</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.558127;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="34.026985"
-       y="52.376625"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.446502;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="15.444433"
+       y="39.240456"
        id="text44-8"
        inkscape:label="m"><tspan
          sodipodi:role="line"
          id="tspan44-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.558127"
-         x="34.026985"
-         y="52.376625">m</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.446502"
+         x="15.444433"
+         y="39.240456">m</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.558127;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="8.2173452"
-       y="20.30146"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.446502;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-5.203279"
+       y="13.580323"
        id="text44-8-7"
        inkscape:label="L"><tspan
          sodipodi:role="line"
          id="tspan44-5-2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.558127"
-         x="8.2173452"
-         y="20.30146">L</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.446502"
+         x="-5.203279"
+         y="13.580323">L</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.558127;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       x="-8.2780724"
-       y="21.874954"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.446502;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="-18.399612"
+       y="14.839118"
        id="text44-1"
        inkscape:label="theta"><tspan
          sodipodi:role="line"
          id="tspan44-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.56317px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.558127"
-         x="-8.2780724"
-         y="21.874954">θ<tspan
-   style="font-size:4.26605px;baseline-shift:sub;stroke-width:0.558127"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.25054px;font-family:'Cambria Math';-inkscape-font-specification:'Cambria Math, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.446502"
+         x="-18.399612"
+         y="14.839118">θ<tspan
+   style="font-size:3.41284px;baseline-shift:sub;stroke-width:0.446502"
    id="tspan46">0</tspan></tspan></text>
   </g>
 </svg>
