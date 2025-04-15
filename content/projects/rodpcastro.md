@@ -1,6 +1,7 @@
 ---
 date: '2025-04-11'
 draft: false 
+showToc: false
 title: 'rodpcastro.github.io'
 author: 'Rodrigo Castro'
 summary: 'Static site built with Hugo and deployed via GitHub Pages.'
