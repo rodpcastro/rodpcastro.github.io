@@ -1,0 +1,51 @@
+baseURL: https://rodpcastro.github.io/
+languageCode: en-us
+title: rodpcastro
+theme: PaperMod
+
+params:
+
+  defaultTheme: auto
+  ShowAllPagesInArchive: true
+  ShowPostNavLinks: true
+  ShowToc: true
+  math: true
+  ShowCodeCopyButtons: true
+  ShowPageNums: true
+
+  homeInfoParams:
+    Title: "Rodrigo Castro"
+    Content: |
+      Learn more [about](/about) me, explore my [projects](/projects), or read my [blog](/blog).<br>
+      For an overview, explore the [tags](/tags); for all posts, browse the [archives](/archives).
+
+  socialIcons:
+    - name: github
+      url: https://github.com/rodpcastro/
+    - name: linkedin
+      url: https://www.linkedin.com/in/rodpcastro/
+
+menu:
+  main:
+    - identifier: about 
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: blog 
+      name: Blog
+      url: /posts/
+      weight: 20
+    - identifier: projects 
+      name: Projects
+      url: /projects/
+      weight: 30
+    - identifier: search
+      name: Search
+      url: /search/
+      weigth: 40
+
+# Setting "unsafe: true" allows me to use raw html inside markdown files.
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
