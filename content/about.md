@@ -1,5 +1,5 @@
 ---
-date: '2025-04-14'
+date: '2025-04-15'
 draft: false
 showToc: false
 title: "About me"
@@ -9,27 +9,35 @@ summary: "About me."
 
 I'm Rodrigo. I enjoy learning and aplying tools to solve engineering problems.
 
-This site presents how I use math, physics, coding, CAD and CAE in small but interesting projects.
+This site presents how I use math, physics, coding, [CAD] and [CAE] in small but interesting projects.
 
 My goal is to show my progress in my favorite subjects and share what I like to do as a hobby.
 
 # Interests
-My main fields of study are:
+The engineering challenges I enjoy working on often belong to these fields:
 
-* **Naval Architecture**: ships, boats, submarines and other marine vehicles; design and construction; hydrostatics; intact and damaged stability; hydrodynamics; structures. 
-* **Ocean Engineering**: fixed and floating offshore structures; pipelines and risers; mooring; marine and offshore renewable energy.
+* **Naval Architecture**: I'm fascinated by ships, boats, submarines and other marine vehicles — their unique designs, construction methods, how they stay afloat (or submerged) and stable, what makes them move efficiently and safely through water, and their ability to withstand nature's forces.
 
-On these fields, I'm mostly interested in:
-
-* **Hydrodynamics and Aerodynamics**: computational fluid dynamics; fluid-structure interaction; wave mechanics; ship resistance and propulsion; seakeeping; ship maneuvering; energy saving devices; wave energy converters; wind-assisted propulsion; wind-turbine aerodynamics.
+* **Ocean Engineering**: I'm curious about fixed and floating structures designed to harness offshore energy, their interconnections with other structures, the seabed, and the shore via pipelines and risers, and their capacity to securely anchor and endure the ocean's harshest conditions over extended periods.
 
 # Tools
-* **Programming**: Python; Fortran; MATLAB.
-* **CAD**: Rhinoceros; AutoCAD.
-* **CAE**: Maxsurf; OrcaFlex; Ansys.
+* **Programming**: [Python]; [Fortran]; [MATLAB].
+* **CAD**: [Rhinoceros].
+* **CAE**: [Maxsurf].
 
 # More
 To know more about me beyond my hobbies, check out these links:
 
-* [LinkedIn](https://www.linkedin.com/in/rodpcastro/)
-* [ResearchGate](https://www.researchgate.net/profile/Rodrigo_Castro36)
+* [LinkedIn]
+* [ResearchGate]
+
+<!--Links-->
+[CAD]: https://en.wikipedia.org/wiki/Computer-aided_design
+[CAE]: https://en.wikipedia.org/wiki/Computer-aided_engineering
+[Python]: https://www.python.org/
+[Fortran]: https://fortran-lang.org/
+[MATLAB]: https://www.mathworks.com/products/matlab.html
+[Rhinoceros]: https://www.rhino3d.com/
+[Maxsurf]: https://maxsurf.net/
+[LinkedIn]: https://www.linkedin.com/in/rodpcastro/
+[ResearchGate]: https://www.researchgate.net/profile/Rodrigo_Castro36
