@@ -25,6 +25,10 @@ params:
     - name: linkedin
       url: https://www.linkedin.com/in/rodpcastro/
 
+  mainSections:
+    - posts
+    - projects
+
 menu:
   main:
     - identifier: about 
@@ -44,8 +48,16 @@ menu:
       url: /search/
       weigth: 40
 
+# Ref: https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-features/#search-page
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
 # Setting "unsafe: true" allows me to use raw html inside markdown files.
 markup:
   goldmark:
     renderer:
       unsafe: true
+
