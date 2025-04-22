@@ -8,7 +8,7 @@ tags: ['Python', 'Jupyter Notebook', 'Matplotlib']
 ---
 
 ## Introduction
-White revisiting Fortran through the book [Modern Fortran] by Milan Curcic, I reached Chapter 4, which dives into solving the 2D shallow water equations numerically. The chapter wraps up with a [Python script] for visualizing results as static figures, but I decided that an animation would be better to bring the solution to life. In this post, I share my approach to creating that animation using Python and Jupyter Notebook.
+White revisiting Fortran through the book [Modern Fortran] by Milan Curcic, I reached Chapter 4, which dives into solving the 1D shallow water equations numerically. The chapter wraps up with a [Python script] for visualizing results as static figures, but I decided that an animation would be better to bring the solution to life. In this post, I share my approach to creating that animation using Python and Jupyter Notebook.
 
 ## Methods
 To transform raw data into an animated plot, the Python libraries [NumPy] and [Matplotlib] are used. NumPy simplifies handling numerical data, while Matplotlib generates figures and animates them through the [FuncAnimation] class. To display interactive plots in Jupyter Notebooks, it's necessary the addition of [ipympl]. To save animations as videos, it is recommended the installation of a comprehensive multimedia framework, like [FFmpeg]. The import section of the code looks like this:
@@ -79,7 +79,7 @@ anim.save('waterflow.mp4', writer=writer)
 
 ## Result 
 <p align="center">
-<img src="waterflow.gif" alt="2D shallow water" >
+<img src="waterflow.gif" alt="1D shallow water" >
 </p>
 
 ## Appendices
