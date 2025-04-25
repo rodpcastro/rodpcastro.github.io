@@ -87,7 +87,7 @@ anim.save('waterflow.mp4', writer=writer)
 * <a href="tsunami.ipynb" download>Notebook</a>
 
 <!--Links-->
-[Modern Fortran]: https://www.manning.com/books/modern-fortran
+[Modern Fortran]: https://search.worldcat.org/title/1309887166
 [Python script]: https://github.com/modern-fortran/tsunami/blob/master/src/ch04/plot_water_height.py
 [Matplotlib]: https://matplotlib.org/
 [FuncAnimation]: https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html#matplotlib.animation.FuncAnimation
