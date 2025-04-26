@@ -1,3 +1,4 @@
+```python
 from expint import expi
 import mpmath
 import matplotlib.pyplot as plt
@@ -23,3 +24,4 @@ ax.set_xlabel('x')
 ax.set_ylabel(r'$ \frac{|Ei_{expint} - Ei_{mpmath}|}{|Ei_{mpmath}|} $')
 ax.set_title('Relative error')
 plt.savefig('expi_error.svg')
+```
