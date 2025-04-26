@@ -1,0 +1,9 @@
+{{ $file := .Get "file" }}
+{{ $currentFile := .Page.File.Path }}
+{{ $filePath := path.Join (path.Dir $currentFile) $file }}
+{{ if fileExists $filePath }}
+  {{ $content := readFile $filePath | markdownify }}
+  {{ $content }}
+{{ else }}
+  <p>Error: File "{{ $file }}" not found relative to {{ path.Dir $currentFile }}.</p>
+{{ end }}
