@@ -20,7 +20,7 @@ The Fortran subroutine to be wrapped by F2PY contains the numerical implementati
 
 $$ \text{Ei}(x) = \int_{-\infty}^x \frac{e^t}{t} \, dt, \quad x \in \mathbb{R}, x > 0 $$
 
-The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found on the book *[Computation of special functions]* (Zhang & Jin, 1996). The numerical implementation given below is a refit of the code found in the book.
+The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found in the [book][csf_book] of Zhang and Jin [[1]](#references). The numerical implementation given below is a refit of the code found in the book.
 
 <details><summary>expint.f90</summary>
 {{< include file="expint.md" >}}
@@ -64,11 +64,15 @@ The resulting plot shows that the relative difference between `expi` and `mpmath
 <img src="expi_error.svg" alt="expi relative error" >
 </p>
 
+## References
+1. Shanjie Zhang and Jianming Jin. 1996. *Computation of Special Functions*. Wiley, New York, NY.
+2. NumPy Developers. 2024. F2PY. Distributed as part of NumPy. https://numpy.org/doc/stable/f2py/index.html. (2025).
+
 ## Appendices
 * <a href="files.zip" download>files.zip</a>
 
 <!--Links-->
-[Fortran]: https://www.manning.com/books/modern-fortran
+[Fortran]: https://fortran-lang.org/
 [NumPy]: https://numpy.org/
 [F2PY]: https://numpy.org/doc/stable/f2py/
 [gfortran]: https://gcc.gnu.org/wiki/GFortran
@@ -77,7 +81,7 @@ The resulting plot shows that the relative difference between `expi` and `mpmath
 [special functions]: https://en.wikipedia.org/wiki/Special_functions
 [exponential integral]: https://en.wikipedia.org/wiki/Exponential_integral
 [spfuncs]: https://github.com/rodpcastro/special-functions
-[Computation of special functions]: https://search.worldcat.org/title/33971114
+[csf_book]: https://search.worldcat.org/title/33971114
 [F2PY examples]: https://numpy.org/doc/stable/f2py/f2py-examples.html
 [f2cmap]: https://numpy.org/doc/stable/f2py/advanced/use_cases.html#dealing-with-kind-specifiers
 [NumPy migration]: https://numpy.org/doc/stable/reference/distutils_status_migration.html#distutils-status-migration
