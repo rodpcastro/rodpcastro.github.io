@@ -51,7 +51,7 @@ f2py -c expint.f90 -m expint
 
 The command produces a [shared library](#appendices) (`expint.cp312-win_amd64.pyd`). The `expi` procedure can now be called from a Python module named `expint`.
 
-## Result
+## Results
 To demonstrate that the `expi` procedure works as expected, its outputs are compared against [mpmath], a Python library for arbitrary precision arithmetic. The `mpmath.ei` function is used with 16 digits of precision and the relative error between `expi` and `mpmath.ei` is computed and displayed through the following Python code:
 
 <details><summary><i>expint_test.py</i></summary>

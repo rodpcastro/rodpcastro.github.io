@@ -77,7 +77,7 @@ writer = FFMpegWriter(fps=10)
 anim.save('waterflow.mp4', writer=writer)
 ```
 
-## Result 
+## Results
 <p align="center">
 <img src="waterflow.gif" alt="1D shallow water" >
 </p>
