@@ -83,8 +83,7 @@ anim.save('waterflow.mp4', writer=writer)
 </p>
 
 ## Appendices
-* <a href="tsunami.txt" download>Raw data</a>
-* <a href="tsunami.ipynb" download>Notebook</a>
+* <a href="files.zip" download>files.zip</a>
 
 <!--Links-->
 [Modern Fortran]: https://search.worldcat.org/title/1309887166

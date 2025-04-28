@@ -65,9 +65,7 @@ The resulting plot shows that the relative difference between `expi` and `mpmath
 </p>
 
 ## Appendices
-* <a href="expint.f90" download>expint.f90</a>
-* <a href="expint.cp312-win_amd64.pyd" download>expint.cp312-win_amd64.pyd</a>
-* <a href="expint_test.py" download>expint_test.py</a>
+* <a href="files.zip" download>files.zip</a>
 
 <!--Links-->
 [Fortran]: https://www.manning.com/books/modern-fortran
