@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, FFMpegWriter
 ```
 
-The [raw data](#appendices) is a table with 5001 rows and 101 columns, where each row represents a time step in the solution of the shallow water equations. The first element of each row indicates the time step, so only the other 100 elements characterize the wave elevation `h` as a function of the spatial position `x`. The raw data is retrieved from a text file and handled as follows:
+The raw data is a table with 5001 rows and 101 columns, where each row represents a time step in the solution of the shallow water equations. The first element of each row indicates the time step, so only the other 100 elements characterize the wave elevation `h` as a function of the spatial position `x`. The raw data is retrieved from a text file and handled as follows:
 
 
 ```python
@@ -84,11 +84,11 @@ anim.save('waterflow.mp4', writer=writer)
 
 ## References
 1. Milan Curcic. 2020. tsunami. https://github.com/modern-fortran/tsunami. (2025).
+2. J. D. Hunter. 2007. Matplotlib. https://matplotlib.org/stable/. (2025).
 
 ## Appendices
-* {{< post_files >}}
+* {{< post_files_view >}}
 * {{< post_files_download >}}
-<!-- * <a href="files.zip" download>files.zip</a> -->
 
 <!--Links-->
 [Modern Fortran]: https://search.worldcat.org/title/1309887166

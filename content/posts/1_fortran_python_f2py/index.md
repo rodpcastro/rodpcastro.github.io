@@ -20,7 +20,7 @@ The Fortran subroutine to be wrapped by F2PY contains the numerical implementati
 
 $$ \text{Ei}(x) = \int_{-\infty}^x \frac{e^t}{t} \, dt, \quad x \in \mathbb{R}, x > 0 $$
 
-The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found in the [book][csf_book] of Zhang and Jin [[1]](#references). The numerical implementation given below is a refit of the code found in the book.
+The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found on the book *[Computation of Special Functions][csf_book]* by Zhang and Jin. The numerical implementation given below is a refit of the code found in the book.
 
 <details><summary>expint.f90</summary>
 {{< include file="expint.md" >}}
@@ -49,7 +49,7 @@ f2py -c expint.f90 -m expint
 {{< include file="out.md" >}}
 </details>
 
-The command produces a [shared library](#appendices) (`expint.cp312-win_amd64.pyd`). The `expi` procedure can now be called from a Python module named `expint`.
+The command produces a shared library (`expint.cp312-win_amd64.pyd`). The `expi` procedure can now be called from a Python module named `expint`.
 
 ## Results
 To demonstrate that the `expi` procedure works as expected, its outputs are compared against [mpmath], a Python library for arbitrary precision arithmetic. The `mpmath.ei` function is used with 16 digits of precision and the relative error between `expi` and `mpmath.ei` is computed and displayed through the following Python code:
@@ -65,11 +65,11 @@ The resulting plot shows that the relative difference between `expi` and `mpmath
 </p>
 
 ## References
-1. Shanjie Zhang and Jianming Jin. 1996. *Computation of Special Functions*. Wiley, New York, NY.
-2. NumPy Developers. 2024. F2PY. Distributed as part of NumPy. https://numpy.org/doc/stable/f2py/index.html. (2025).
+1. NumPy Developers. 2024. F2PY. Distributed as part of NumPy. https://numpy.org/doc/stable/f2py/index.html. (2025).
 
 ## Appendices
-* <a href="files.zip" download>files.zip</a>
+* {{< post_files_view >}}
+* {{< post_files_download >}}
 
 <!--Links-->
 [Fortran]: https://fortran-lang.org/
