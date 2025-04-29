@@ -8,7 +8,7 @@ tags: ['Python', 'Jupyter Notebook', 'Matplotlib']
 ---
 
 ## Introduction
-White revisiting Fortran through the book [Modern Fortran] by Milan Curcic, I reached Chapter 4, which dives into solving the 1D shallow water equations numerically. The chapter wraps up with a [Python script] for visualizing results as static figures, but I decided that an animation would be better to bring the solution to life. In this post, I share my approach to creating that animation using Python and Jupyter Notebook.
+While revisiting Fortran through the book [Modern Fortran] by Milan Curcic, I reached Chapter 4, which dives into solving the 1D shallow water equations numerically. The chapter wraps up with a [Python script] for visualizing results as static figures, but I decided that an animation would be better to bring the solution to life. In this post, I share my approach to creating that animation using Python and Jupyter Notebook.
 
 ## Methods
 To transform raw data into an animated plot, the Python libraries [NumPy] and [Matplotlib] are used. NumPy simplifies handling numerical data, while Matplotlib generates figures and animates them through the [FuncAnimation] class. To display interactive plots in Jupyter Notebooks, it's necessary the addition of [ipympl]. To save animations as videos, it is recommended the installation of a comprehensive multimedia framework, like [FFmpeg]. The import section of the code looks like this:
@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, FFMpegWriter
 ```
 
-The [raw data](#appendices) is a table with 5001 rows and 101 columns, where each row represents a time step in the solution of the shallow water equations. The first element of each row indicates the time step, so only the other 100 elements characterize the wave elevation `h` as a function of the spatial position `x`. The raw data is retrieved from a text file and handled as follows:
+The raw data is a table with 5001 rows and 101 columns, where each row represents a time step in the solution of the shallow water equations. The first element of each row indicates the time step, so only the other 100 elements characterize the wave elevation `h` as a function of the spatial position `x`. The raw data is retrieved from a text file and handled as follows:
 
 
 ```python
@@ -77,14 +77,18 @@ writer = FFMpegWriter(fps=10)
 anim.save('waterflow.mp4', writer=writer)
 ```
 
-## Result 
+## Results
 <p align="center">
 <img src="waterflow.gif" alt="1D shallow water" >
 </p>
 
+## References
+1. Milan Curcic. 2020. tsunami. https://github.com/modern-fortran/tsunami. (2025).
+2. J. D. Hunter. 2007. Matplotlib. https://matplotlib.org/stable/. (2025).
+
 ## Appendices
-* <a href="tsunami.txt" download>Raw data</a>
-* <a href="tsunami.ipynb" download>Notebook</a>
+* {{< post_files_view >}}
+* {{< post_files_download >}}
 
 <!--Links-->
 [Modern Fortran]: https://search.worldcat.org/title/1309887166

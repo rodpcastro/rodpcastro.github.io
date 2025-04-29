@@ -27,7 +27,6 @@ subroutine expi(x, ei)
   use, intrinsic :: iso_fortran_env, only: int16, real64
 
   implicit none
-  real(real64), parameter :: pi = 3.141592653589793d0
   real(real64), parameter :: gm = 0.5772156649015329d0 ! Euler's constant
   real(real64), intent(in) :: x
   real(real64), intent(out) :: ei
