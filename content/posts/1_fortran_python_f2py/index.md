@@ -60,9 +60,7 @@ To demonstrate that the `expi` procedure works as expected, its outputs are comp
 
 The resulting plot shows that the relative difference between `expi` and `mpmath.ei` is very small (≤ \\(10^{-13}\\)) for \\(10^{-10} ≤ x ≤ 10^{2}\\).
 
-<p align="center">
-<img src="expi_error.svg" alt="expi relative error" >
-</p>
+{{< figure src="expi_error.svg" alt="expi relative error" align="center" >}}
 
 ## References
 1. NumPy Developers. 2024. F2PY. Distributed as part of NumPy. https://numpy.org/doc/stable/f2py/index.html. (2025).

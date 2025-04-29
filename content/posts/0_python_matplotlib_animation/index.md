@@ -78,9 +78,7 @@ anim.save('waterflow.mp4', writer=writer)
 ```
 
 ## Results
-<p align="center">
-<img src="waterflow.gif" alt="1D shallow water" >
-</p>
+{{< figure src="waterflow.gif" alt="1D shallow water" align="center" >}}
 
 ## References
 1. Milan Curcic. 2020. tsunami. https://github.com/modern-fortran/tsunami. (2025).
