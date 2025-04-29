@@ -1,0 +1,11 @@
+{{ $title := .Get "title" }}
+{{ $src := .Get "src" }}
+{{ $fmt := .Get "fmt" }}
+
+{{ $postDir := .Page.File.Dir }}
+{{ $srcPath := path.Join $postDir $src }}
+{{ $content := readFile $srcPath }}
+
+<details><summary>{{ $title }}</summary>
+  {{ printf "```%s\n%s\n```" $fmt $content | markdownify }}
+</details>
