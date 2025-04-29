@@ -1,0 +1,8 @@
+{{/* This shortcode redirects to the github page containing the post files. */}}
+
+{{/* Get the post folder. */}}
+{{ $dir := .Page.File.Dir }}
+{{ $dirnorm := replace $dir "\\" "/" }}  {{/* Windows uses \, Linux uses / */}}
+{{ $post := replace $dirnorm "posts/" "" }}
+
+<a href="https://github.com/rodpcastro/rodpcastro.github.io/tree/main/content/posts/{{ $post }}files" target="_blank">View files</a>
