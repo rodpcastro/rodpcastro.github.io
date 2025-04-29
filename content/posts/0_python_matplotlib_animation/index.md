@@ -86,7 +86,9 @@ anim.save('waterflow.mp4', writer=writer)
 1. Milan Curcic. 2020. tsunami. https://github.com/modern-fortran/tsunami. (2025).
 
 ## Appendices
-* <a href="files.zip" download>files.zip</a>
+* {{< post_files >}}
+* {{< post_files_download >}}
+<!-- * <a href="files.zip" download>files.zip</a> -->
 
 <!--Links-->
 [Modern Fortran]: https://search.worldcat.org/title/1309887166
