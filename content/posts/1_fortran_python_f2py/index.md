@@ -64,16 +64,6 @@ The resulting plot shows that the relative difference between `expi` and `mpmath
 * {{< post_files_view >}}
 * {{< post_files_download >}}
 
-<!-- FIX: add space below dropdown_file element -->
-<!-- ## Testing --> 
-<!-- Blablabla -->
-<!---->
-<!-- {{< dropdown_file title="expint_test.py" src="files\expint_test.py" fmt="python" >}} -->
-<!---->
-<!-- Blebleble -->
-<!---->
-<!-- Bliblibli -->
-
 <!--Links-->
 [Fortran]: https://fortran-lang.org/
 [NumPy]: https://numpy.org/
