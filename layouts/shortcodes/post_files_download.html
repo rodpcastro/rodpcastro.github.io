@@ -1,12 +1,10 @@
 {{/* This shortcode redirects to a page that downloads the post files. */}}
 
 {{/* Get the post folder. */}}
-{{ $dir := .Page.File.Dir }}
-{{ $dirnorm := replace $dir "\\" "/" }}  {{/* Windows uses \, Linux uses / */}}
-{{ $post := replace $dirnorm "posts/" "" }}
+{{ $post := path.Base .Page.File.Dir }}
 
 {{/* Build the download link. */}}
-{{ $gitfiles := printf "https://github.com/rodpcastro/rodpcastro.github.io/tree/main/content/posts/%sfiles" $post }}
+{{ $gitfiles := printf "https://github.com/rodpcastro/rodpcastro.github.io/tree/main/content/posts/%s/files" $post }}
 {{ $downgit := "https://downgit.github.io/#/home" }}
 {{ $downfiles := printf "%s?url=%s&rootDirectory=false" $downgit $gitfiles | safeURL }}
 
