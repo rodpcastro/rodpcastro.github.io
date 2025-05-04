@@ -10,15 +10,16 @@ tags: ['Boundary Element Method', 'Python']
 ## Introduction
 The Boundary Element Method (BEM) is a numerical computational technique for solving partial differential equations in physics and engineering. Its main advantage over other numerical methods, such as the Finite Element Method, is its ability to reduce the problem to the boundary, providing a solution with n-1 dimensions to a problem of n dimensions. This makes it highly efficient and often the preferred method for many applications in fluid mechanics, acoustics and electromagnetics.
 
-This post aims to give an introduction to the 2D Boundary Element Method, by reproducing the [article] of *Keng-Cheng Ang*.
-
-With the purpose of reviewing some concepts in the Boundary Element Method, this post aims to reproduce, in a more straight forward manner, the article 
+This post represents my introduction to the 2D Boundary Element Method by reproducing the [article] of *Keng-Cheng Ang*. Unlike the original, which uses MATLAB, I implement the method in Python.
 
 ## Methods
 
 
 ## Results
 
+{{< figure src="analytical_bem_comparison.svg" alt="analytical bem comparison" align="center" >}}
+
+{{< figure src="abserr.svg" alt="bem absolute error" align="center" >}}
 
 ## Conclusion
 
