@@ -20,7 +20,7 @@ The Fortran subroutine to be wrapped by F2PY contains the numerical implementati
 
 $$ \text{Ei}(x) = \int_{-\infty}^x \frac{e^t}{t} \, dt, \quad x \in \mathbb{R}, x > 0 $$
 
-The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found on the book *[Computation of Special Functions][csf_book]* by Zhang and Jin. The numerical implementation given below is a refit of the code found in the book.
+The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found on the book *[Computation of Special Functions][csf_book]* by *Zhang* and *Jin*. The numerical implementation given below is a refit of the code found in the book.
 
 {{< dropdown_file title="expint.f90" src="files/expint.f90" fmt="fortran" >}}
 
