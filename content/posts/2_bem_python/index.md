@@ -1,5 +1,5 @@
 ---
-date: '2025-05-05'
+date: '2025-05-06'
 draft: false
 title: 'Introducing the Boundary Element Method with Python'
 author: 'Rodrigo Castro'
@@ -13,9 +13,10 @@ The [Boundary Element Method] (BEM) is a numerical computational technique for s
 This post represents my introduction to the 2D Boundary Element Method by reproducing the [article] of *Keng-Cheng Ang*. Unlike the original, which uses MATLAB, I implement the method in Python.
 
 ## Methods
+What is described in this section is mostly a summary of what is present in the original article, except for the [implementation part](#python-implementation), where the Python code is presented along with a brief explaination of procedures and variables.
 
 ### Laplace's equation
-The  aim is to solve the [Laplace's equation] in the 2D region \(R\), subject to Dirichlet and Neumann boundary conditions in \(C_\alpha\) and \(C_\beta\), respectively:
+The  aim is to solve the [Laplace's equation] in a 2D region \(R\), subject to Dirichlet and Neumann boundary conditions in \(C_\alpha\) and \(C_\beta\), respectively:
 
 $$ \nabla^2 u = \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0, \quad \text{for } (x, y) \in R, \tag{1} $$
 
@@ -23,7 +24,7 @@ $$ u = f(x,y) \quad \text{for } (x, y) \in C_\alpha, \tag{2} $$
 
 $$ q = \frac{\partial u}{\partial n} = g(x, y) \quad \text{for } (x, y) \in C_\beta. \tag{3} $$
 
-The fundamental solution of Laplace's equation in two dimensions is:
+The fundamental solution ([Green's function]) of Laplace's equation in two dimensions is:
 
 $$ u^* = \frac{1}{4\pi} \ln \left( (x - \xi)^2 + (y - \eta)^2 \right). \tag{4} $$
 
@@ -51,7 +52,7 @@ $$ C \approx C_1 \cup C_2 \cup C_3 \cup \ldots \cup C_N \tag{7} $$
 
 A closed boundary with \(N\) segments is defined by the \((x, y)\) coordinates of \(N+1\) nodes, with the last node being coincident with the first, that is \((x_{N+1}, y_{N+1}) = (x_1, y_1)\). A segment \(C_k\) is defined by a straight line joining \((x_k, y_k)\) to \((x_{k+1}, y_{k+1})\). These segments are known as boundary elements.
 
-Our next simplification is taking the values of \(u\) and \(\partial u / \partial n\) in each element to be constant and equal to their values at the element midpoint \((\bar{x}_k, \bar{y}_k)\). That is,
+Our next simplification is taking the values of \(u\) and \(\partial u / \partial n\) in each element to be constant and equal to their values at the element midpoint \((\bar{x}_k, \bar{y}_k)\):
 
 $$ u \approx \bar{u}_k, \quad \text{and} \quad \frac{\partial u}{\partial n} = \bar{q}_k \quad \text{for } (x, y) \in C_k. \tag{8} $$
 
@@ -102,30 +103,84 @@ Once \(A\) and \(b\) are formed, the system can be solved for \(z\), bearing in 
 With all values of \(\bar{u}_k\) and \(\bar{q}_k\), Equation \((9)\) can be used to find the value of \(u\) at any interior point in the domain \(R\).
 
 ### Python implementation
-
-The Python function below defines the boundary shape and the boundary conditions' types and values for the application used in the original article and also in this post. This application is better described in the section [Example](#example). Here, we simply explain what are each one the variables returned by this function represent.
+As in the last section, we start our code by defining the boundary. The Python function below defines the boundary shape and the boundary conditions' types and values for the application used in the original article and also in this post. This application is better described in the section [Example](#example). Here, we simply explain what are each one the variables returned by this function represent.
 
 {{< dropdown_file title="Boundary definition" src="files/boundary_definition.py" fmt="python" >}}
 
-In the function above,
+* **xb** and **yb** are vector arrays containing the \(x\) and \(y\) coordinates of \(N+1\) nodes.
+* **bt** is a vector array containing the types of boundary codition of \(N\) elements. \(0\) and \(1\) represent the Dirichlet and Neumann boundary conditions, respectively.
+* **bv** is a vector array containing the values of boundary condition of \(N\) elements.
 
-* **xb** and **yb** are vector arrays containing \(x\) and \(y\) coordinates of \(N+1\) elements' nodes.
-* **bt** is a vector array containing the boundary coditions' types of \(N\) elements. \(0\) and \(1\) represent the Dirichlet and Neumann boundary conditions, respectively.
-* **bv** is a vector array containing the boundary conditions' values of \(N\) elements.
+using the variables **xb** and **yb** returned by the previous function, the next function computes important boundary geometrical properties:
 
+{{< dropdown_file title="Elements properties" src="files/elements_properties.py" fmt="python" >}}
 
+* **xm** and **ym** are vector arrays containing the \(x\) and \(y\) coordinates of the midpoints of \(N\) elements.
+* **lm** is a vector array containing the lengths of \(N\) elements.
+* **nx** and **ny** are vector arrays containing the \(x\) and \(y\) components of unit normal vectors of \(N\) elements.
+
+The next procedures are responsible for the computation of the integrals \((10)\) and \((11)\) containing the \(u^*\) Green's function defined in \((4)\).
+
+{{< dropdown_file title="\(F_k(\xi, \eta) \text{, } G_k(\xi, \eta)\)" src="files/fgcoefficients.py" fmt="python" >}}
+
+The image below helps understanding the substitutions of \(x\) and \(y\) in \(u^*\) and \(\partial u^* / \partial n\) that can be seen in the previous code:
+
+{{< figure src="images/elementgeo.svg" alt="analytical bem comparison" align="center" >}}
+
+$$
+x = xb_k - t \cdot l_k \cdot ny_k ,\\
+y = yb_k + t \cdot l_k \cdot nx_k ,\\
+$$
+
+where \(0 ≤ t ≤ 1\) and \(l_k\) is the length of the \(k^{th}\) element.
+
+The next piece of code builds the matrix \(A\) and the vector \(b\) according to equations \((14)\) and \((15)\), solves the system \(A z = b\) for \(z\) and returns the values of \(\bar{u}\) and \(\bar{q}\) for each boundary element.
+
+{{< dropdown_file title="Finding unknows \(\bar{u}\) and \(\bar{q}\)" src="files/bem_solver.py" fmt="python" >}}
+
+Now it's possible to use expression \((9)\) to find the values of \(u\) in any point \((\xi, \eta) \in R\): 
+
+{{< dropdown_file title="Finding domain \(u\) values" src="files/domain_values.py" fmt="python" >}}
+
+All steps above are combined in the following function, making it possible to study to convergence of the method as the number of boundary elements are increased:
+
+{{< dropdown_file title="All steps combined" src="files/bem_solution.py" fmt="python" >}}
 
 ### Example
-?
+The problem to be solved by our Python implementation of the Boundary Element Method consists of the following:
+
+$$ \nabla^2 u = 0 \quad \text{for} \quad 0 ≤ x ≤ 1, \quad 0 ≤ y ≤ 1, $$
+
+subjected to the boundary conditions
+
+$$
+u = 0 \quad \text{on} \quad x = 0, \quad 0 ≤ y ≤ 1,\\
+u = \cos(\pi y) \quad \text{on} \quad x = 1, \quad 0 ≤ y ≤ 1,\\
+$$
+
+$$
+\frac{\partial u}{\partial n} = 0 \quad \text{on} \quad y = 0 \quad \text{and} \quad y = 1, \quad 0 ≤ x ≤ 1.\\
+$$
+
+The analytical solution for this problem is
+
+$$ u = \frac{\sinh(\pi x) \cos(\pi y)}{\sinh(\pi)}. $$
 
 ## Results
+The Python implementation of the Boundary Element Method is executed for a total number elements ranging from the minimum 4 up to 100. The figure below shows qualitatively how the numerical solution approaches the analytical one as the number of elements increase.
 
-{{< figure src="analytical_bem_comparison.svg" alt="analytical bem comparison" align="center" >}}
+{{< figure src="images/analytical_bem_comparison.svg" alt="analytical bem comparison" align="center" >}}
 
-{{< figure src="abserr.svg" alt="bem absolute error" align="center" >}}
+This next image displays the maximum absolute difference between the numerical and the analytical solutions for different number of elements. Clearly, the BEM solution gets closer to the analytical as \(N\) increases.
+
+{{< figure src="images/abserr.svg" alt="bem absolute error" align="center" >}}
 
 ## Conclusion
+We successfully reproduced the [article] of *Keng-Cheng Ang*, using a Python implemented Boundary Element Method to solve the 2D Laplace's equation. Many aspects can be improved and presented in future posts, for example:
 
+* Write a more pythonic implementation with an [OOP] approach.
+* Use circular arcs or splines as boundary elements.
+* Use different Green's functions to solve different problems.
 
 ## References
 1. Keng-Cheng Ang. 2008. Introducing the boundary element method with MATLAB. International Journal of Mathematical Education in Science and Technology 39, 4 (Jun. 2008), 505–19. https://doi.org/10.1080/00207390701722676
@@ -138,4 +193,6 @@ In the function above,
 [Boundary Element Method]: https://en.wikipedia.org/wiki/Boundary_element_method 
 [article]: https://doi.org/10.1080/00207390701722676
 [Laplace's equation]: https://en.wikipedia.org/wiki/Laplace%27s_equation
+[Green's function]: https://en.wikipedia.org/wiki/Green%27s_function
 [greensids]: https://en.wikipedia.org/wiki/Green%27s_identities
+[OOP]: https://en.wikipedia.org/wiki/Object-oriented_programming

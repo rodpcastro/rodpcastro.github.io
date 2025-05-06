@@ -1,7 +1,7 @@
 import numpy as np
 
 def define_boundary(nl):
-    """1x1 Square region uniformly discretized in 4*nl elements.
+    """Define 1x1 Square region uniformly discretized in 4*nl elements.
 
     Parameters
     ----------

@@ -1,7 +1,7 @@
 import numpy as np
 
-def elements_properties(xb, yb):
-    """Find elements midpoints, lengths and unit normal vectors.
+def compute_elements_properties(xb, yb):
+    """Compute elements midpoints, lengths and unit normal vectors.
 
     Returns
     -------
