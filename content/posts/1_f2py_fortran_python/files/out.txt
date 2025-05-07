@@ -1,4 +1,3 @@
-```console
 The Meson build system
 Version: 1.7.2
 Source dir: C:\Users\Rodrigo\AppData\Local\Temp\tmpc5z677mk
@@ -57,4 +56,3 @@ Building modules...
         Constructing wrapper function "expi"...
           ei = expi(x)
     Wrote C/API module "expint" to file ".\expintmodule.c"
-```

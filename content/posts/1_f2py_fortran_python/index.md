@@ -20,11 +20,9 @@ The Fortran subroutine to be wrapped by F2PY contains the numerical implementati
 
 $$ \text{Ei}(x) = \int_{-\infty}^x \frac{e^t}{t} \, dt, \quad x \in \mathbb{R}, x > 0 $$
 
-The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found on the book *[Computation of Special Functions][csf_book]* by Zhang and Jin. The numerical implementation given below is a refit of the code found in the book.
+The expressions for numerical evaluation of \\(\text{Ei}\\) and many other special functions can be found on the book *[Computation of Special Functions][csf_book]* by *Zhang* and *Jin*. The numerical implementation given below is a refit of the code found in the book.
 
-<details><summary>expint.f90</summary>
-{{< include file="expint.md" >}}
-</details>
+{{< dropdown_file title="expint.f90" src="files/expint.f90" fmt="fortran" >}}
 
 The `expi` subroutine might not display the most correct way of writing subroutines in Fortran, but it reflects the adaptations suggested by [F2PY examples] for correct wrapping:
 
@@ -45,24 +43,19 @@ After that, all that remains is to build our extension module by running the fol
 ```console
 f2py -c expint.f90 -m expint
 ```
-<details><summary><i>shell output</i></summary>
-{{< include file="out.md" >}}
-</details>
+
+{{< dropdown_file title="shell output" src="files/out.txt" fmt="console" >}}
 
 The command produces a shared library (`expint.cp312-win_amd64.pyd`). The `expi` procedure can now be called from a Python module named `expint`.
 
 ## Results
 To demonstrate that the `expi` procedure works as expected, its outputs are compared against [mpmath], a Python library for arbitrary precision arithmetic. The `mpmath.ei` function is used with 16 digits of precision and the relative error between `expi` and `mpmath.ei` is computed and displayed through the following Python code:
 
-<details><summary><i>expint_test.py</i></summary>
-{{< include file="expint_test.md" >}}
-</details>
+{{< dropdown_file title="expint_test.py" src="files/expint_test.py" fmt="python" >}}
 
 The resulting plot shows that the relative difference between `expi` and `mpmath.ei` is very small (≤ \\(10^{-13}\\)) for \\(10^{-10} ≤ x ≤ 10^{2}\\).
 
-<p align="center">
-<img src="expi_error.svg" alt="expi relative error" >
-</p>
+{{< figure src="expi_error.svg" alt="expi relative error" align="center" >}}
 
 ## References
 1. NumPy Developers. 2024. F2PY. Distributed as part of NumPy. https://numpy.org/doc/stable/f2py/index.html. (2025).

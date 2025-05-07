@@ -60,4 +60,16 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-
+    # https://gohugo.io/content-management/mathematics/
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+        enable: true

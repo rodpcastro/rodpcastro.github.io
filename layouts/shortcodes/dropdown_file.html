@@ -1,0 +1,16 @@
+{{/* This shortcode includes a file's content in a dropdown element. */}}
+
+{{/* Arguments. */}}
+{{ $title := .Get "title" }}  {{/* dropdown title */}}
+{{ $src := .Get "src" }}  {{/* file path */}}
+{{ $fmt := .Get "fmt" }}  {{/* file format */}}
+
+{{/* Read file contents. */}}
+{{ $postDir := .Page.File.Dir }}
+{{ $srcPath := path.Join $postDir $src }}
+{{ $content := readFile $srcPath }}
+
+{{/* Put formatted content inside dropdown. */}}
+<p><details><summary>{{ $title }}</summary>
+  {{ printf "```%s\n%s\n```" $fmt $content | markdownify }}
+</details></p>
