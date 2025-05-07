@@ -10,10 +10,10 @@ tags: ['Boundary Element Method', 'Python']
 ## Introduction
 The [Boundary Element Method] (BEM) is a numerical computational technique for solving partial differential equations in physics and engineering. Its main advantage over other numerical methods, such as the Finite Element Method, is its ability to reduce the problem to the boundary, providing a solution with n-1 dimensions to a problem of n dimensions. This makes it highly efficient and often the preferred method for many applications in fluid mechanics, acoustics and electromagnetics.
 
-This post represents my introduction to the 2D Boundary Element Method by reproducing the [article] of *Keng-Cheng Ang*. Unlike the original, which uses MATLAB, I implement the method in Python.
+This post is an introduction to the 2D Boundary Element Method by reproducing the [article] of *Keng-Cheng Ang*. Unlike the original, which uses MATLAB, here the method is implemented in Python.
 
 ## Methods
-What is described in this section is mostly a summary of what is present in the original article, except for the [implementation part](#python-implementation), where the Python code is presented along with a brief explaination of procedures and variables.
+What is described in this section is mostly a summary of what is present in the original article, except for the [implementation part](#python-implementation), where the Python code is presented along with brief explanations of procedures and variables.
 
 ### Laplace's equation
 The  aim is to solve the [Laplace's equation] in a 2D region \(R\), subject to Dirichlet and Neumann boundary conditions in \(C_\alpha\) and \(C_\beta\), respectively:
@@ -92,11 +92,19 @@ $$
 $$
 b_{mk} = \begin{cases}
   \bar{q}_k F_k(\bar{x}_m, \bar{y}_m) & \text{if } q \text{ given over } C_k,\\
-  \bar{u}_k G_k(\bar{x}_m, \bar{y}_m) & \text{if } u \text{ given over } C_k \text{ and } k \ne m,\\
-  \bar{u}_k \left( -G_k(\bar{x}_m, \bar{y}_m) + \frac{1}{2} \right) & \text{if } u \text{ given over } C_k \text{ and } k = m.
+  -\bar{u}_k G_k(\bar{x}_m, \bar{y}_m) & \text{if } u \text{ given over } C_k \text{ and } k \ne m,\\
+  -\bar{u}_k \left( G_k(\bar{x}_m, \bar{y}_m) - \frac{1}{2} \right) & \text{if } u \text{ given over } C_k \text{ and } k = m.
 \end{cases}
 \tag{15}
 $$
+
+When \(m = k\), the integrals \((10)\) and \((11)\) are evaluated to
+
+$$ F_k(\xi, \eta) = \frac{L_k}{2\pi} \left( \ln \left( \frac{L_k}{2} - 1 \right) \right), \tag{16} $$
+
+$$ G_k(\xi, \eta) = 0, \tag{17} $$
+
+where \(L_k\) is the element's length.
 
 Once \(A\) and \(b\) are formed, the system can be solved for \(z\), bearing in mind that \(z_k = \bar{u}_k\) if \(q\) is given over \(C_k\), and \(z_k = \bar{q}_k\) if \(u\) is given over \(C_k\).
 
@@ -108,12 +116,12 @@ As in the last section, we start our code by defining the boundary. The Python f
 {{< dropdown_file title="Boundary definition" src="files/boundary_definition.py" fmt="python" >}}
 
 * **xb** and **yb** are vector arrays containing the \(x\) and \(y\) coordinates of \(N+1\) nodes.
-* **bt** is a vector array containing the types of boundary codition of \(N\) elements. \(0\) and \(1\) represent the Dirichlet and Neumann boundary conditions, respectively.
-* **bv** is a vector array containing the values of boundary condition of \(N\) elements.
+* **bt** is a vector array containing the boundary codition types of \(N\) elements. \(0\) and \(1\) represent the Dirichlet and Neumann boundary conditions, respectively.
+* **bv** is a vector array containing the boundary condition values of \(N\) elements.
 
-using the variables **xb** and **yb** returned by the previous function, the next function computes important boundary geometrical properties:
+Using the variables **xb** and **yb** returned by the previous function, the next function computes important boundary geometrical properties:
 
-{{< dropdown_file title="Elements properties" src="files/elements_properties.py" fmt="python" >}}
+{{< dropdown_file title="Elements geometrical properties" src="files/elements_properties.py" fmt="python" >}}
 
 * **xm** and **ym** are vector arrays containing the \(x\) and \(y\) coordinates of the midpoints of \(N\) elements.
 * **lm** is a vector array containing the lengths of \(N\) elements.
@@ -134,7 +142,7 @@ $$
 
 where \(0 ≤ t ≤ 1\) and \(l_k\) is the length of the \(k^{th}\) element.
 
-The next piece of code builds the matrix \(A\) and the vector \(b\) according to equations \((14)\) and \((15)\), solves the system \(A z = b\) for \(z\) and returns the values of \(\bar{u}\) and \(\bar{q}\) for each boundary element.
+The next piece of code builds the matrix \(A\) and the vector \(b\) according to equations \((14)\)–\((17)\), solves the system \(A z = b\) for \(z\) and returns the values of \(\bar{u}\) and \(\bar{q}\) for each boundary element.
 
 {{< dropdown_file title="Finding unknows \(\bar{u}\) and \(\bar{q}\)" src="files/bem_solver.py" fmt="python" >}}
 
@@ -142,27 +150,27 @@ Now it's possible to use expression \((9)\) to find the values of \(u\) in any p
 
 {{< dropdown_file title="Finding domain \(u\) values" src="files/domain_values.py" fmt="python" >}}
 
-All steps above are combined in the following function, making it possible to study to convergence of the method as the number of boundary elements are increased:
+All steps above are combined in the following function, making it possible to study the convergence of the method as the number of boundary elements are increased.
 
 {{< dropdown_file title="All steps combined" src="files/bem_solution.py" fmt="python" >}}
 
 ### Example
 The problem to be solved by our Python implementation of the Boundary Element Method consists of the following:
 
-$$ \nabla^2 u = 0 \quad \text{for} \quad 0 ≤ x ≤ 1, \quad 0 ≤ y ≤ 1, $$
+$$ \nabla^2 u = 0 \quad \text{for} \quad 0 < x < 1, \quad 0 < y < 1, $$
 
 subjected to the boundary conditions
 
 $$
-u = 0 \quad \text{on} \quad x = 0, \quad 0 ≤ y ≤ 1,\\
-u = \cos(\pi y) \quad \text{on} \quad x = 1, \quad 0 ≤ y ≤ 1,\\
+u = 0 \quad \text{on} \quad x = 0, \quad 0 < y < 1,\\
+u = \cos(\pi y) \quad \text{on} \quad x = 1, \quad 0 < y < 1,\\
 $$
 
 $$
-\frac{\partial u}{\partial n} = 0 \quad \text{on} \quad y = 0 \quad \text{and} \quad y = 1, \quad 0 ≤ x ≤ 1.\\
+\frac{\partial u}{\partial n} = 0 \quad \text{on} \quad y = 0 \quad \text{and} \quad y = 1, \quad 0 < x < 1.\\
 $$
 
-The analytical solution for this problem is
+To validate the numerical results, the analytical solution is presented below.
 
 $$ u = \frac{\sinh(\pi x) \cos(\pi y)}{\sinh(\pi)}. $$
 
@@ -176,11 +184,11 @@ This next image displays the maximum absolute difference between the numerical a
 {{< figure src="images/abserr.svg" alt="bem absolute error" align="center" >}}
 
 ## Conclusion
-We successfully reproduced the [article] of *Keng-Cheng Ang*, using a Python implemented Boundary Element Method to solve the 2D Laplace's equation. Many aspects can be improved and presented in future posts, for example:
+The [article] of *Keng-Cheng Ang* was successfully reproduced, using a Python implemented Boundary Element Method to solve the 2D Laplace's equation. Many aspects can be improved and presented in future posts, for example:
 
-* Write a more pythonic implementation with an [OOP] approach.
-* Use circular arcs or splines as boundary elements.
-* Use different Green's functions to solve different problems.
+* Speed up the computation of the integrals \((10)\) and \((11)\).
+* Write a more pythonic code with an [OOP] approach.
+* Use splines as boundary elements.
 
 ## References
 1. Keng-Cheng Ang. 2008. Introducing the boundary element method with MATLAB. International Journal of Mathematical Education in Science and Technology 39, 4 (Jun. 2008), 505–19. https://doi.org/10.1080/00207390701722676
