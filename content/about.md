@@ -7,7 +7,9 @@ author: 'Rodrigo Castro'
 summary: "About me." 
 ---
 
-![Profile picture](/rodpcastro_profile.svg#center)
+{{< figure src="/rodpcastro_photo.jpg" width="200" align="center" alt="Rodrigo Castro Photo" >}}
+
+<!-- <img src="/rodpcastro_photo.jpg" width="200" align="right"> -->
 
 I'm Rodrigo. I enjoy learning and aplying tools to solve engineering problems.
 
