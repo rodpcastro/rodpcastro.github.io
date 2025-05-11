@@ -7,6 +7,8 @@ author: 'Rodrigo Castro'
 summary: "About me." 
 ---
 
+![Profile picture](/rodpcastro_profile.svg#center)
+
 I'm Rodrigo. I enjoy learning and aplying tools to solve engineering problems.
 
 This site presents how I use math, physics, coding, [CAD] and [CAE] in small but interesting projects.
@@ -16,7 +18,7 @@ My goal is to show my progress in my favorite subjects and share what I like to 
 # Interests
 The engineering challenges I enjoy working on often belong to these fields:
 
-* **Naval Architecture**: I'm fascinated by ships, boats, submarines and other marine vehicles — their unique designs, construction methods, how they stay afloat (or submerged) and stable, what makes them move efficiently and safely through water, and their ability to withstand nature's forces.
+* **Naval Architecture**: I'm fascinated by ships, boats, submarines and other marine vehicles—their unique designs, construction methods, how they stay afloat (or submerged) and stable, what makes them move efficiently and safely through water, and their ability to withstand nature's forces.
 
 * **Ocean Engineering**: I'm curious about fixed and floating structures designed to harness offshore energy, their interconnections with other structures, the seabed, and the shore via pipelines and risers, and their capacity to securely anchor and endure the ocean's harshest conditions over extended periods.
 
