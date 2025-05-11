@@ -1,9 +1,17 @@
 baseURL: https://rodpcastro.github.io/
 languageCode: en-us
-title: rodpcastro
+title: "Rodrigo Castro"
 theme: PaperMod
 
 params:
+
+  env: production
+  title: "Rodrigo Castro"
+  description: "Rodrigo Castro - personal website"
+  author: "Rodrigo Castro"
+  keywords: ["Rodrigo Castro", "Blog", "Naval Architecture", "Ocean Engineering"]
+  images: ["rodpcastro_logo.svg"]
+  DateFormat: "January 2, 2006"
 
   defaultTheme: auto
   ShowAllPagesInArchive: true
@@ -28,6 +36,30 @@ params:
   mainSections:
     - posts
     - projects
+
+  label:
+    text: "rodpcastro.github.io"
+    icon: "/rodpcastro_label.svg"
+    iconHeight: 35
+
+  profileMode:
+    enabled: true
+    title: "Rodrigo Castro"
+    subtitle: |
+      Learn more **[about](/about)** me, explore my **[projects](/projects)**, or read my **[blog](/blog)**.<br>
+      For an overview, explore the **[tags](/tags)**; for all posts, browse the **[archives](/archives)**.
+    imageUrl: "/rodpcastro_profile.svg"
+    imageWidth: 150
+    imageHeight: 150
+    imageTitle: "Profile picture"
+
+    # analytics:
+    #   google:
+    #     SiteVerificationTag: “XYZabc”
+    #   bing:
+    #     SiteVerificationTag: “XYZabc”
+    #   yandex:
+    #     SiteVerificationTag: “XYZabc”
 
 menu:
   main:
@@ -73,3 +105,4 @@ markup:
           - - \(
             - \)
         enable: true
+

@@ -48,7 +48,7 @@ With BEM, it is possible to find approximations to all the unkowns on the right-
 ### The Boundary Element Method
 The first step is approximating the boundary \(C\) by a polygon with \(N\) straight line segments:
 
-$$ C \approx C_1 \cup C_2 \cup C_3 \cup \ldots \cup C_N \tag{7} $$
+$$ C \simeq C_1 \cup C_2 \cup C_3 \cup \ldots \cup C_N \tag{7} $$
 
 A closed boundary with \(N\) segments is defined by the \((x, y)\) coordinates of \(N+1\) nodes, with the last node being coincident with the first, that is \((x_{N+1}, y_{N+1}) = (x_1, y_1)\). A segment \(C_k\) is defined by a straight line joining \((x_k, y_k)\) to \((x_{k+1}, y_{k+1})\). These segments are known as boundary elements.
 
