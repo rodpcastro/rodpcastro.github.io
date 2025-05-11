@@ -29,6 +29,22 @@ params:
     - posts
     - projects
 
+  label:
+    text: "rodpcastro.github.io"
+    icon: "/rodpcastro_label.svg"
+    iconHeight: 35
+
+  profileMode:
+    enabled: true
+    title: "Rodrigo Castro"
+    subtitle: |
+      Learn more **[about](/about)** me, explore my **[projects](/projects)**, or read my **[blog](/blog)**.<br>
+      For an overview, explore the **[tags](/tags)**; for all posts, browse the **[archives](/archives)**.
+    imageUrl: "/rodpcastro_profile.svg"
+    imageWidth: 150
+    imageHeight: 150
+    imageTitle: "Profile picture"
+
 menu:
   main:
     - identifier: about 
