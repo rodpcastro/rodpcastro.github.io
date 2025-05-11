@@ -5,6 +5,14 @@ theme: PaperMod
 
 params:
 
+  env: production
+  title: "Rodrigo Castro"
+  description: "Rodrigo Castro - personal website"
+  author: "Rodrigo Castro"
+  keywords: ["Rodrigo Castro", "Blog", "Naval Architecture", "Ocean Engineering"]
+  images: ["rodpcastro_logo.svg"]
+  DateFormat: "January 2, 2006"
+
   defaultTheme: auto
   ShowAllPagesInArchive: true
   ShowPostNavLinks: true
@@ -44,6 +52,14 @@ params:
     imageWidth: 150
     imageHeight: 150
     imageTitle: "Profile picture"
+
+    # analytics:
+    #   google:
+    #     SiteVerificationTag: “XYZabc”
+    #   bing:
+    #     SiteVerificationTag: “XYZabc”
+    #   yandex:
+    #     SiteVerificationTag: “XYZabc”
 
 menu:
   main:
