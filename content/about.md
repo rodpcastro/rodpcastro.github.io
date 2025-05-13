@@ -7,7 +7,7 @@ author: 'Rodrigo Castro'
 summary: "About me." 
 ---
 
-<img src="/rodpcastro_photo.png" alt="Rodrigo Castro Photo" style="float:right; margin-left:15px; margin-top:0">
+<img src="/rodpcastro_photo.svg" alt="Rodrigo Castro Photo" style="float:right; margin-left:15px; margin-top:0">
 
 I'm Rodrigo. I enjoy learning and aplying tools to solve engineering problems.
 
