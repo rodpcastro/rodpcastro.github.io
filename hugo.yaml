@@ -104,5 +104,7 @@ markup:
           inline:
           - - \(
             - \)
+          - - $
+            - $
         enable: true
 
