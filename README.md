@@ -1,8 +1,8 @@
-# rodpcastro.github.io
+# [rodpcastro.github.io][website]
 
-This [website] is used to showcase my progress in favorite topics and small projects I've developed.
+My personal website.
 
-Built with [Hugo] and the [PaperMod] theme.
+Powered by [Hugo] and [PaperMod].
 
 <!-- Links -->
 [website]: https://rodpcastro.github.io/

@@ -3,7 +3,7 @@ date: '2025-05-14'
 draft: true
 title: '3_test'
 author: 'Rodrigo Castro'
-summary: ''
+summary: 'Post for testing.'
 tags: ['',]
 ---
 
