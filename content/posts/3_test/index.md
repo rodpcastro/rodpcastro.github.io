@@ -9,9 +9,13 @@ tags: ['',]
 
 ## Introduction
 
-$$ \nabla^2 u = 0 $$
+$$ \begin{equation} \nabla^2 u = 0 \end{equation} $$
 
-$$ E = mc^2 $$
+$$\begin{equation}
+E = mc^2
+\end{equation}$$
+
+\[ \eq{E = mc^2} \]
 
 ## Methods
 

@@ -31,7 +31,9 @@
         {left: "$", right: "$", display: false},
       ],
       throwOnError: false,
+      macros: {"\\eq": "\\begin{equation}#1\\end{equation}"},  // Substitute \begin{equation}...\end{equation} by \eq{}
     });
   });
 </script>
+
 {{ end }}
