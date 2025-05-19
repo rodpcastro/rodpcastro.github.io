@@ -202,7 +202,7 @@ The following picture presents the amount of seconds it take to evalute $\mathbb
 {{< figure src="images/eval_time.svg" alt="Evaluation time" align="center" >}}
 
 ## Conclusion
-This study encourages the use of the analytical approach to improve the Boundary Element Method code implemented in the [previous post][2_bem_python], as it is the faster and the most precise. The Gauss-Legendre quadrature will be kept as an alternative and the probable main method for future tasks that require complex Green's functions or more sofisticated boundary elements, where the analytic integration method is time consuming or inexistent. However, the Gauss-Legendre quadrature implementation still requires polishment, inspired by `quad`:
+This study encourages the use of the analytical approach to improve the Boundary Element Method code implemented in the [previous post][2_bem_python], as it is the fastest and the most precise. The Gauss-Legendre quadrature will be kept as an alternative and the probable main method for future tasks that require complex Green's functions or more sofisticated boundary elements, where the analytic integration method is time consuming or inexistent. However, the Gauss-Legendre quadrature implementation still requires polishment, inspired by `quad`:
 
 * Better approximations for the influence coefficients when $\boldsymbol{\xi}$ is close to $\mathbf{x}$;
 * Handling of $G$ singularities in the integration domain;
