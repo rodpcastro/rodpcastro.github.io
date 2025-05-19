@@ -67,7 +67,7 @@ Integrals $(6)$ and $(7)$ are evaluated over a straight boundary element of leng
 {{< figure src="images/intGQ.svg" alt="analytical G Q parameters" align="center">}}
 
 $$\eq{
-r_1 = \sqrt{\left(x - a_j \right)^2 + \xi_y^2}, \quad r_2 = \sqrt{\left(x + a_j \right)^2 + \xi_y^2},
+r_1 = \sqrt{\left(\xi_x - a_j \right)^2 + \xi_y^2}, \quad r_2 = \sqrt{\left(\xi_x + a_j \right)^2 + \xi_y^2},
 }$$
 
 $$\eq{
