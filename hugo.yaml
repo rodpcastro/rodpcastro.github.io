@@ -32,6 +32,8 @@ params:
       url: https://github.com/rodpcastro/
     - name: linkedin
       url: https://www.linkedin.com/in/rodpcastro/
+    - name: researchgate
+      url: https://www.researchgate.net/profile/Rodrigo_Castro36
 
   mainSections:
     - posts

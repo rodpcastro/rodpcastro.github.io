@@ -15,23 +15,23 @@ This site presents how I use math, physics, coding, [CAD] and [CAE] in small but
 
 My goal is to show my progress in my favorite subjects and share what I like to do as a hobby.
 
-# Interests
+## Interests
 The engineering challenges I enjoy working on often belong to these fields:
 
 * **Naval Architecture**: I'm fascinated by ships, boats, submarines and other marine vehicles—their unique designs, construction methods, how they stay afloat (or submerged) and stable, what makes them move efficiently and safely through water, and their ability to withstand nature's forces.
 
 * **Ocean Engineering**: I'm curious about fixed and floating structures designed to harness offshore energy, their interconnections with other structures, the seabed, and the shore via pipelines and risers, and their capacity to securely anchor and endure the ocean's harshest conditions over extended periods.
 
-# Tools
-* **Programming**: [Python]; [Fortran]; [MATLAB].
-* **CAD**: [Rhinoceros].
-* **CAE**: [Maxsurf].
+## Links
+To know more about me, check out these links:
 
-# More
-To know more about me beyond my hobbies, check out these links:
-
+* [GitHub]
 * [LinkedIn]
 * [ResearchGate]
+* [Academia]
+* [Google Scholar]
+* [ORCID]
+* [Lattes]
 
 <!--Links-->
 [CAD]: https://en.wikipedia.org/wiki/Computer-aided_design
@@ -41,5 +41,10 @@ To know more about me beyond my hobbies, check out these links:
 [MATLAB]: https://www.mathworks.com/products/matlab.html
 [Rhinoceros]: https://www.rhino3d.com/
 [Maxsurf]: https://maxsurf.net/
+[GitHub]: https://github.com/rodpcastro/
 [LinkedIn]: https://www.linkedin.com/in/rodpcastro/
 [ResearchGate]: https://www.researchgate.net/profile/Rodrigo_Castro36
+[Academia]: https://ufrj.academia.edu/rodpcastro
+[ORCID]: https://orcid.org/0000-0001-7629-2562
+[Google Scholar]: https://scholar.google.com/citations?user=1OV75pgAAAAJ
+[Lattes]: https://lattes.cnpq.br/4505959120762276
