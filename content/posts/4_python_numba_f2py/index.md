@@ -1,6 +1,6 @@
 ---
 date: '2025-06-16'
-draft: true
+draft: false
 title: 'Accelerating Python code with Numba and F2PY'
 author: 'Rodrigo Castro'
 summary: 'Using Numba and F2PY to speed up computations in Python.'
