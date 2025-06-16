@@ -1,5 +1,5 @@
 ---
-date: '2025-06-15'
+date: '2025-06-16'
 draft: true
 title: 'Accelerating Python code with Numba and F2PY'
 author: 'Rodrigo Castro'
@@ -11,23 +11,23 @@ tags: ['Python', 'Numba', 'Fortran', 'F2PY']
 Following the suggestion mentioned in the conclusion of the [previous article][2d_incoef], the objective of this post is to speed up the computation of the 2D constant boundary element influence coefficients, $\mathbb{G}$ and $\mathbb{Q}$, by two methods and compare their performances.
 
 ## Methods
-The two approaches to accelerate Python code that are studied in this post are [Numba] and [F2PY]. They are further explained in the subsequent topics.
+The two methods to accelerate Python code that are studied in this post are [Numba] and [F2PY]. They are further examined in the following sections.
 
 ### Numba
 [Numba] is a open-source just-in-time compiler that translates a subset of Python and NumPy into fast machine code. The most common way of using Numba is through its decorators, which can be applied to the functions the user wants to compile. The following code snippet displays the application of Numba decorator [`jit`][numba.jit] to a class static method that computes the influence coefficients $\mathbb{G}$ and $\mathbb{Q}$ by analytical integration.
 
 {{< dropdown_file title="Class static method accelerated with Numba" src="analytical_numba.py" fmt="python" >}}
 
-The same decorator could have been applied to a function, but the choice to decorate a static method of the class `Element` is because this calculation is only performed for objects of this class. In the used version of Numba (`0.61.0`), the same decorator could not be applied to an instance method, because the argument `self` could not be interpreted by the `jit` compiler.
+The decorator could have been applied to a function, but it was used to a static method of the class `Element` since this calculation is exclusive to its objects. In Numba version 0.61.0, applying the decorator to an instance method was not possible, as the `jit` compiler could not interpret the `self` argument.
 
-In the code above the arguments to `numba.jit` represent:
+The used arguments to `numba.jit` are described below: 
 
-* `'Tuple((f8, f8))(f8[:], f8)'`: this is the signature that represents the types of the method's arguments, where `f8` means 8-byte float number. The string indicates two float outputs `Tuple((f8, f8))`, one float array and one float number as inputs (`f8[:], f8`). In general, this input is optional, but it's necessary when `cache=True` is used.
-* `nopython=True`: this argument tells Numba to run the static method entirely without the involvement of the Python interpreter. This is the recommended and best-practice way to use Numba `jit` decorator as it leads to the best performance.
+* `'Tuple((f8, f8))(f8[:], f8)'`: this is the signature that represents the types of the arguments, where `f8` means 8-byte float number. The first part `Tuple((f8, f8))` indicates two float outputs, the second part `(f8[:], f8)` describe one float array and one float variable as inputs. In general, the signature is optional, but it's necessary when `cache=True` is used.
+* `nopython=True`: this argument tells Numba to run the static method entirely without the involvement of the Python interpreter. This is the recommended practice for best performance.
 * `cache=True`: this option makes Numba use a cached version of the compiled method. This avoids recompilation every time the routine is called for the first time.
 
 ### F2PY
-[F2PY] was already explored in [this post][post_f2py]. F2PY is a tool that builds Python wrappers for Fortran routines, allowing the speed of Fortran compiled code to be used from within the Python environment. Below is the Fortran code to be wrapped by F2PY.
+[F2PY], already explored in [another post][post_f2py], is a tool that builds Python wrappers for Fortran routines, allowing the speed of Fortran compiled code to be used from within the Python environment. Below is the Fortran code to be wrapped by F2PY.
 
 {{< dropdown_file title="Fortran subroutine" src="gauss_fortran.f90" fmt="fortran" >}}
 
@@ -46,7 +46,7 @@ import incoef
 
 class Element:
     
-    [...]
+    # [...]
         
     def get_influence_coefficients_gauss_fortran(self, field_global):
         field_local = self.get_point_local_coordinates(field_global)
@@ -57,19 +57,18 @@ class Element:
 In the code above, the first `incoef` is the Python module created by F2PY. The second `incoef` is the Fortran module wrapped by F2PY. The inclusion of the Fortran subroutine inside a Fortran module allows the addition of auxilary functions that can be kept private from the Python environment.
 
 ## Results
-In the [previous post][2d_incoef], analytical integration and the 4-point Gauss-Legendre quadrature were compared in terms of performance. Here they are reevaluated separately, each improved by the two methods aforementioned, and now the focus is on how much the two original procedures are improved by Numba and Fortran (F2PY). The following plot displays the computation time taken to calculate the influence coefficients $\mathbb{G}$ and $\mathbb{Q}$ for several field points layed around a boundary element, the same conditions presented in the [previous post][2d_incoef].
+The [previous post][2d_incoef] compared analytical integration and the 4-point Gauss-Legendre quadrature. Here, each method is independently reassessed, enhanced by the previously mentioned Numba and F2PY techniques, with focus on their performance improvements. The following plot shows the computation time for calculating the influence coefficients $\mathbb{G}$ and $\mathbb{Q}$ for several field points layed around a boundary element, the same conditions presented in the previous post.
 
 {{< figure src="computation_time.svg" alt="Computation time" align="center">}}
 
-On average, both Numba and Fortran perform similary, taking half the time of the original procedures. 
-
+On average, methods improved by Numba and Fortran perform similary, taking <ins>half the time of the original procedures</ins>. 
 
 ## Conclusion
-
+The results indicate that both Numba and Fortran significantly enhance a Python routine performance. Numba's ease of use encourages its further application, though it's best suited for numerically oriented code using basic Python elements and NumPy, with limitations on other Python constructs. Conversely, Fortran offers greater flexibility in optimizing Python code, but the F2PY wrapper imposes constraints, requiring Fortran modules and procedures to follow a strict format distinct from traditional Fortran development.
 
 ## References
-1. 
-2. NumPy Developers. 2024. F2PY. Distributed as part of NumPy. https://numpy.org/doc/stable/f2py/index.html. (2025).
+1. Siu Kwan Lam, Antoine Pitrou, and Stanley Seibert. 2015. Numba: a LLVM-based Python JIT compiler. In Proceedings of the Second Workshop on the LLVM Compiler Infrastructure in HPC (LLVM '15). Association for Computing Machinery, New York, NY, USA, Article 7, 1–6. https://doi.org/10.1145/2833157.2833162
+2. NumPy Developers. 2024. F2PY. Distributed as part of NumPy. https://numpy.org/doc/stable/f2py/
 
 ## Appendices
 * {{< post_files_view >}}
