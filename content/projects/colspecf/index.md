@@ -1,5 +1,6 @@
 ---
 date: '2025-06-09'
+lastmod: '2025-06-20'
 draft: false
 title: 'ColSpecF'
 author: 'Rodrigo Castro'
@@ -10,10 +11,10 @@ tags: ['Special Functions', 'Fortran']
 {{< figure src="colspecf_logo.svg" alt="ColSpecF Logo" align="center">}}
 
 ## Introduction
-[ColSpecF][ColSpecF GitHub] (Collected Special Functions) is a [Fortran][Fortran Website] library for evaluating mathematical [Special Functions], built around adaptations of [Collected Algorithms][calgo] from [ACM] to modern Fortran.
+[ColSpecF][ColSpecF GitHub] (Collected Special Functions) is a [Fortran][Fortran Website] library for evaluating mathematical [Special Functions], built around adaptations of algorithms collected from [several sources](#references).
 
 ## Tests
-Tests are conducted by comparing the ColSpecF results with those of [mpmath], an arbitrary-precision numerical library. These tests ensure at least 8 digits of precision within the specified domains.
+Tests are conducted by comparing the ColSpecF results with those of [mpmath], an arbitrary-precision numerical library.
 
 Testing routines are built using [test-drive], a standard Fortran unit testing framework.
 
@@ -23,17 +24,17 @@ The [API documentation][ColSpecF Docs] for this library is generated using [FORD
 ## References
 Fortran code for evaluating special functions is sourced from the following websites:
 
-1. Association for Computing Machinery. 2012. [Collected Algorithms][calgo]
-2. Jason Blevins. 2004. [Alan Miller's Fortran Software][jblevins]
-3. Commonwealth Scientific and Industrial Research Organisation. 2004. [Software from Alan J. Miller][csiro]
+* Association for Computing Machinery. 2012. [Collected Algorithms][calgo]
+* Jason Blevins. 2004. [Alan Miller's Fortran Software][jblevins]
+* Commonwealth Scientific and Industrial Research Organisation. 2004. [Software from Alan J. Miller][csiro]
+* Elsevier. 2025. [Elsevier Data Repository][elsvdata]
+* John Burkardt. 2025. [Fortran77 Source Codes][jbf77]
+* John Burkardt. 2025. [Fortran90 Codes][jbf90]
+
+This list grows as more special functions are added to the library.
 
 ## License
-ColSpecF is distributed under two licenses based on code origin:
-
-- Code comprising original contributions by Rodrigo Castro is licensed under the MIT License.
-- Code adapted from Collected Algorithms (CALGO), published by the Association for Computing Machinery (ACM), is subject to the [ACM Software License Agreement][acmlic].
-
-Users must comply with the applicable license for each portion of the code. See the [License][License File] for full details.
+ColSpecF is a Fortran library distributed under multiple licenses or permissions based on code origin. Users must comply with the applicable license or permission for each portion of the code. See the [License][License File] for full details.
 
 <!-- links -->
 <!-- Introduction -->
@@ -48,10 +49,11 @@ Users must comply with the applicable license for each portion of the code. See 
 [FORD]: https://forddocs.readthedocs.io/
 [ReadTheDocs]: https://about.readthedocs.com/
 <!-- References -->
-[acm]: https://www.acm.org/
 [calgo]: https://calgo.acm.org/
 [jblevins]: https://jblevins.org/mirror/amiller/
 [csiro]: https://wp.csiro.au/alanmiller/
+[elsvdata]: https://elsevier.digitalcommonsdata.com/
+[jbf77]: https://people.sc.fsu.edu/~jburkardt/f77_src/f77_src.html
+[jbf90]: https://people.sc.fsu.edu/~jburkardt/f_src/f_src.html
 <!-- License -->
-[acmlic]: https://www.acm.org/publications/policies/software-copyright-notice
 [License File]: https://github.com/rodpcastro/colspecf/blob/main/LICENSE
