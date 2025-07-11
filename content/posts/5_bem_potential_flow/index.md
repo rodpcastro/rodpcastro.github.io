@@ -15,7 +15,7 @@ In this post, the goal is to show the use of the [Boundary Element Method][bem] 
 ## Methods
 The potential flow is described by the velocity potential that satisfies the Laplace's equation, which fundamental solution is already known and studied in a [previous post][2d_incoef]. The following topics describe the boundary value problem that represents the potential flow around a circular cylinder and the analytical solution to that problem.
 
-## Boundary value problem
+### Boundary value problem
 The velocity potential $\Phi$ describing the potential flow around a circular cylinder of radius $R$ placed in a uniform flow of speed $U$ satisfies:
 
 $$\eq{
@@ -50,7 +50,7 @@ $$\eq{
 \frac{\partial \phi}{\partial n} = U \frac{x}{R} \quad \text{for} \quad \sqrt{x^2 + y^2} = R.
 }$$
 
-## Analytical solution
+### Analytical solution
 
 The analytical solution for the total potential $\Phi$ is equivalent to the composition of the uniform flow and dipole potentials. The dipole intensity can be calculated as a function of the uniform flow speed and the cylinder radius, giving the following expressions for the total potential and its gradient in cartesian coordinates:
 
