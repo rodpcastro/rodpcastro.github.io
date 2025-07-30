@@ -4,7 +4,7 @@ draft: false
 title: 'Evaluating analytical expressions representing a two-dimensional potential flow with free-surface'
 author: 'Rodrigo Castro'
 summary: 'Hydrodynamic coefficients and the wave produced by a circular cylinder oscilating in heave are obtained by evaluation of analytical expressions. Experimental data is also presented for validation.'
-tags: ['Julia', Potential Flow']
+tags: ['Julia', 'Potential Flow']
 ---
 
 ## Introduction
