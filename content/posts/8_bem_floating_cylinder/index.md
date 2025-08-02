@@ -1,20 +1,20 @@
 ---
-date: '2025-08-01'
-draft: true
-title: 'Using the Boundary Element Method to find the radiation potential of a floating cylinder'
+date: '2025-08-02'
+draft: false
+title: 'Using the Boundary Element Method to solve the two-dimensional floating body radiation problem'
 author: 'Rodrigo Castro'
 summary: 'Radiation coefficients and the wave amplitude are computed for a cylinder heaving on the free surface of a liquid.'
 tags: ['Boundary Element Method', 'Python', 'Potential Flow']
 ---
 
 ## Introduction
-It is time to revisit a problem solved in an [earlier post][j2d_cylinder]: a cylinder oscilating in heave on the free surface of a liquid. The difference now is the solution method used, which is based on the Boundary Element Method implemented in [TwoDuBEM].
+It is time to revisit a problem solved in an [earlier post][j2d_cylinder]: a cylinder oscilating in heave on the free surface of a liquid. The difference now is the solution method used, which is based on the Boundary Element Method (BEM) implemented in [TwoDuBEM].
 
 ## Methods
 The next subtopics describe the problem and the discretization for the boundary element method.
 
 ### Formulation of the problem
-The following image depicts the cylinder and boundaries of the fluid domain.
+The following image depicts the boundaries of the fluid domain.
 
 {{< figure src="images/fluid_domain.svg" alt="Fluid domain" align="center">}}
 
@@ -24,7 +24,7 @@ $$\eq{
 \phi = \bar{\phi} e^{\mathrm{i} \omega t},
 }$$
 
-and the problem can be solved in the frequency domain in terms of the complex amplitude of the radiation potential $\bar{\phi}$, which must satisfy Laplace's equation in the fluid domain
+and the problem can be solved in the frequency domain for the complex amplitude of the radiation potential $\bar{\phi}$, which must satisfy Laplace's equation in the fluid domain
 
 $$\eq{
 \nabla^2 \bar{\phi} = 0, 
@@ -67,7 +67,7 @@ $$\eq{
 F_z = \mathrm{i} \rho \omega \int_{S_C} \bar{\phi} n_z \, ds,
 }$$
 
-where $n_z$ is the component of the normal vector on the surface of the cylinder $S_C$ in the direction of the mode shape $h_z$. Then, the added mass $a_z$ and wave damping $b_z$ in heave are calculated as
+where $n_z$ is the component of the normal vector to the surface of the cylinder $S_C$ in the direction of the mode shape $h_z$. Then, the added mass $a_z$ and wave damping $b_z$ in heave are calculated as
 
 $$\eq{
 a_z = -\frac{\mathfrak{Re}(F_z)}{\omega^2}
@@ -96,9 +96,7 @@ $$\eq{
 \bar{q} = \frac{\partial \bar{\phi}}{\partial n},
 }$$
 
-and $\mathbb{G}$ and $\mathbb{Q}$ are the [influence matrices][2d_cbem].
-
-Equation $(12)$ can be expanded to show submatrices corresponding to each boundary
+and $\mathbb{G}$ and $\mathbb{Q}$ are the [influence matrices][2d_cbem]. Equation $(12)$ can be expanded to show submatrices corresponding to each boundary
 
 $$\eq{
 \left[ \mathbb{Q}_F \,|\, \mathbb{Q}_R \,|\, \mathbb{Q}_B \,|\, \mathbb{Q}_C \right]
@@ -117,7 +115,7 @@ $$\eq{
 \end{Bmatrix},
 }$$
 
-where the subscripts indicate a boundary: $F$ - free surface, $R$ - radiation surface, $B$ - bottom, $C$ - cylinder. Each of the submatrices of $\mathbb{G}$ and $\mathbb{Q}$ have $N$ lines and the number of columns equal the number of panels used to represent the corresponding boundary, and $N$ is total number of elements used.
+where the subscripts indicate a part of the boundary: $F$ - free surface, $R$ - radiation surface, $B$ - bottom, $C$ - cylinder. Each of the submatrices of $\mathbb{G}$ and $\mathbb{Q}$ have $N$ lines and the number of columns equal the number of panels used to represent the corresponding boundary part, and $N$ is total number of elements used.
 
 Substituting the boundary conditions described in the [prior subtopic](#formulation-of-the-problem) in equation $(14)$, we get
 
@@ -163,15 +161,29 @@ $$\eq{
 F_z = \mathrm{i} \rho \omega \sum_{i=1}^{N_C} \bar{\phi}^i_C n^i_z s_i.
 }$$
 
-The wave amplitude is calculated as the mean value of expression $(11)$ for collocation points on the free surface situated at a distance larger than or equal to $\lambda + R$, where $\lambda$ is the wavelength and $R$ is the cylinder radius.
+The wave amplitude is calculated as the mean value of expression $(11)$ for collocation points on the free surface situated at $|x| \ge R + \lambda$, where $\lambda$ is the wavelength and $R$ is the cylinder radius.
 
 ### Boundary mesh
 The mesh for the Boundary Element Method was built as a function of the wavelength. This was done, because the range of wavelengths studied is too large, and a single mesh to handle the full range is not recommended as the number of elements can get unecessarily large. Alternatively, the mesh could be constructed for subranges, but experiments suggested that rebuilding the mesh, and the influence matrices, for each wavelength studied did not impose too much of a computational burden.
-The mesh is constructed in such a way that the element size on the surface of the cylinder is $\lambda/20$ and grows as a geometric prossion the further it gets away from the cylinder, in the $x$ and $z$ directions. The image below presents the mesh used for one of the wavelengths studied.
+
+The mesh is constructed in such a way that the element size on the surface of the cylinder is $\lambda/20$ and grows as a geometric progression the further it gets away from the cylinder, in the $x$ and $z$ directions.
+
+The radiation surface $S_R$ is placed at a position $|x| = \max (2 R, R + 2 \lambda)$ and, since our initial focus is on calculating the infinite depth response, the bottom surface $S_R$ is placed at a depth $h = \max (2 R, R + \lambda)$.
+
+The image below presents the mesh used for one of the wavelengths studied.
 
 {{< figure src="images/mesh.svg" alt="Mesh" align="center" >}}
 
 ## Results
+The results obtained with the <abbr title="Boundary Element Method">BEM</abbr> are compared with the analytical expressions of Ursell and the experimental data obtained by Vugts, both referenced in a [previous post][j2d_cylinder]. On average, 110 elements were used for each frequency studied. In the following plots, the relevant quantities are in dimensionless form:
+
+$$\omega^\ast = \omega \sqrt{\frac{R}{g}},$$
+
+$$a^\ast_z = \frac{a_z}{\rho A},$$
+
+$$b^\ast_z = \frac{b_z}{\rho A} \sqrt{\frac{R}{g}},$$
+
+where $A = \frac{\pi}{2}R^2$ is the cylinder's volume per length.
 
 {{< figure src="images/heave_added_mass.svg" alt="Added mass" align="center" >}}
 
@@ -179,8 +191,10 @@ The mesh is constructed in such a way that the element size on the surface of th
 
 {{< figure src="images/wave_rao.svg" alt="Wave RAO" align="center" >}}
 
-## Conclusion
+The BEM results are very similar to those obtained by Ursell. To get even closer, a more refined mesh would be needed, but more importanlty, the radiation condition would have to be satisfied with better precision. As stated in equation $(5)$, the radiation condition is only satisfied at infinity, but with the BEM formulation used, this is not possible, as the radiation surface $S_F$ has to be placed at a finite distance from the cylinder.
 
+## Conclusion
+This post presented my first use of the Boundary Element Method to solve the floating body radiation problem. A successfull atempt, but the radiation condition imposes an extra challenge that will be adressed in future posts.
 
 ## References
 1. Gabriel Maarten and Peter Wellens. 2022. A two-dimensional boundary element method with generating absorbing boundary condition for floating bodies of arbitrary shape in the frequency domain. International Shipbuilding Progress 69, 2 (Feb. 2022), 139–159. https://doi.org/10.3233/ISP-210007.
