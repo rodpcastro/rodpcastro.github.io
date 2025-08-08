@@ -1,8 +1,8 @@
 using SpecialFunctions: expintx
 
 function Gᵈᵉᵉᵖ(P, Q, K)
-    # Wave Green function for deep waters. This function
-    # also returns the gradient and Hessian matrix.
+    # Free-surface Green function for deep waters. This function
+    # also returns the gradient and the Hessian matrix.
     ξ, ζ = P
     x, z = Q
 
@@ -46,13 +46,7 @@ function Gᵈᵉᵉᵖ(P, Q, K)
 
     # Auxilary variables s.
     sx1 = sign(x1)
-    sx2 = sx1^2
     sz1 = sign(z1)
-    sz2 = sz1^2
-    sz3 = sign(z3)
-    sz4 = sz3^2
-    sw1 = sx1 * sz1
-    sw2 = sx1 * sz3
 
     if X ≤ 1
         # Near field
@@ -63,14 +57,12 @@ function Gᵈᵉᵉᵖ(P, Q, K)
     end
 
     Gx = sx1 * (R/d4 - R/d6 + k1*imag(e3) + e6)
-    Gz = sz1 * v₁/d4 + sz3 * (-v₃/d6 + k1*real(e3) + im*e6)
+    Gz = sz1 * v₁/d4 + v₃/d6 - k1*real(e3) - im*e6
     ∇G = [Gx, Gz]
 
-    H1 = (d2 - d1)/d5
-    H2 = (d1 - d3)/d7 + k2*real(e4) + im*e7
-    Gxx = sx2 * (H1 + H2)
-    Gzz = -sz2 * H1 - sz4 * H2
-    Gxz = -sw1 * d8*v₁/d5 + sw2 * (d8*v₃/d7 - k2*imag(e4) - e7)
+    Gxx = (d2 - d1)/d5 + (d1 - d3)/d7 + k2*real(e4) + im*e7
+    Gzz = -Gxx
+    Gxz = -sx1 * (sz1 * v₁*d8/d5 + v₃*d8/d7 - k2*imag(e4) - e7)
     ∇²G = [Gxx Gxz; Gxz Gzz]
 
     return (G, ∇G, ∇²G)
