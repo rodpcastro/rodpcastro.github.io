@@ -75,8 +75,8 @@ The results indicate that both Numba and Fortran significantly enhance a Python 
 * {{< post_files_download >}}
 
 <!--Links-->
-[2d_incoef]: ../3_2d_constant_boundary_element/
+[2d_incoef]: ../0003_2d_constant_boundary_element/
 [numba]: https://numba.pydata.org/
 [f2py]: https://numpy.org/doc/stable/f2py/
 [numba.jit]: https://numba.pydata.org/numba-doc/dev/reference/jit-compilation.html#numba.jit
-[post_f2py]: ../1_f2py_fortran_python/
+[post_f2py]: ../0001_f2py_fortran_python/

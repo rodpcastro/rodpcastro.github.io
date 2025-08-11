@@ -240,6 +240,6 @@ This was another sucessfull application of the boundary element method for the s
 * {{< post_files_download >}}
 
 <!--Links-->
-[bem_python]: ../2_bem_python/
-[bem_element]: ../3_2d_constant_boundary_element/
+[bem_python]: ../0002_bem_python/
+[bem_element]: ../0003_2d_constant_boundary_element/
 [twodubem]: https://github.com/rodpcastro/twodubem

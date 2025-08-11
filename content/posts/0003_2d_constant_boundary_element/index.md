@@ -216,8 +216,8 @@ This study encourages the use of the analytical approach to improve the Boundary
 * {{< post_files_download >}}
 
 <!--Links-->
-[1_f2py]: ../1_f2py_fortran_python
-[2_bem_python]: ../2_bem_python
+[1_f2py]: ../0001_f2py_fortran_python
+[2_bem_python]: ../0002_bem_python
 [spquad]: https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html
 [GLquad]: https://en.wikipedia.org/wiki/Gauss%E2%80%93Legendre_quadrature
 [fcbem]: https://search.worldcat.org/title/1450559181

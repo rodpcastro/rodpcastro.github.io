@@ -102,8 +102,8 @@ This post was a demonstration of [TwoDuBEM] in action. Future posts might bring 
 * {{< post_files_download >}}
 
 <!--Links-->
-[bem_python]: ../2_bem_python/
-[2d_incoef]: ../3_2d_constant_boundary_element/
+[bem_python]: ../0002_bem_python/
+[2d_incoef]: ../0003_2d_constant_boundary_element/
 [twodubem]: https://github.com/rodpcastro/twodubem
 [bem]: https://en.wikipedia.org/wiki/Boundary_element_method 
 [potflow]: https://en.wikipedia.org/wiki/Potential_flow

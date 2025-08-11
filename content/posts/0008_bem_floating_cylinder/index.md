@@ -204,7 +204,7 @@ This post presented my first use of the Boundary Element Method to solve the flo
 * {{< post_files_download >}}
 
 <!--Links-->
-[j2d_cylinder]: ../6_julia_2d_cylinder_free_surface/
+[j2d_cylinder]: ../0006_julia_2d_cylinder_free_surface/
 [twodubem]: ../../projects/twodubem/
 [sommerfeld]: https://www.wikiwaves.org/index.php/Sommerfeld_Radiation_Condition
-[2d_cbem]: ../3_2d_constant_boundary_element/
+[2d_cbem]: ../0003_2d_constant_boundary_element/

@@ -4,7 +4,7 @@ draft: true
 title: '10_bem_fsurface_gfunction'
 author: 'Rodrigo Castro'
 summary: ''
-tags: ['',]
+tags: ['Boundary Element Method', 'Potential Flow']
 ---
 
 ## Introduction
@@ -27,4 +27,6 @@ tags: ['',]
 * {{< post_files_download >}}
 
 <!--Links-->
-[Python]: https://www.python.org/
+[cylinderjl] ../0006_julia_2d_cylinder_free_surface/
+[cylinderpy]: ../0008_bem_floating_cylinder/
+[gfunction]: ../0009_2d_inf_depth_fsurface_gfunction/
