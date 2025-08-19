@@ -39,7 +39,7 @@ v_1 = |z - \zeta|, \quad v_3 = |z + \zeta|,
 }$$
 
 $$\eq{
-R = |z - \zeta|, \quad r_1 = \sqrt{R^2 + v_1^2}, \quad r_3 = \sqrt{R^2 + v_3^2},
+R = |x - \xi|, \quad r_1 = \sqrt{R^2 + v_1^2}, \quad r_3 = \sqrt{R^2 + v_3^2},
 }$$
 
 which are depicted in the previous image. $r_1$ is the distance from $\mathrm{Q}$ to $\mathrm{P}$, $r_3$ is the distance from $\mathrm{Q}$ to $\mathrm{P}''$, the image of $\mathrm{P}$ relative to the mean free surface. We also define the dimensionless quantities
