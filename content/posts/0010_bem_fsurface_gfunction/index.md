@@ -104,9 +104,13 @@ The response of the floating cylinder is computed according to $(5)$ and present
 
 {{< figure src="images/heave_RAO.svg" alt="Heave RAO" align="center" >}}
 
-As a cherry on the top, we end this results section with an animation of the heaving cylinder, the final result after solving the radiation and diffraction problems successfully. From this animation it's possible to see that the wave amplitude on the left side of the cylinder is higher than the wave amplitude on the right side, which makes sense, as the cylinder is acting as a barrier that is only allowed to move vertically. If the horizontal movement had also been considered, this difference could have been less pronounced, but this is a task for another article.
+As a cherry on the top, we end this results section with two animations of the heaving cylinder, the final result after solving the radiation and diffraction problems successfully. The first animation is for the frequency when the RAO is maximum.
 
-{{< figure src="images/cylinder.gif" alt="Cylinder animation" align="center" >}}
+{{< figure src="images/cylinder1.gif" alt="Cylinder animation" align="center" >}}
+
+The second animation is for $\omega^\ast \approx 1.22$ (**not** in the region strongly affected by the irregular frequency). At this frequency, it's possible to see that the wave amplitude on the left side of the cylinder is higher than the wave amplitude on the right side, which means that the cylinder is acting as a barrier. If the horizontal movement had also been considered, this difference could have been less pronounced, but this is a task for another article.
+
+{{< figure src="images/cylinder2.gif" alt="Cylinder animation" align="center" >}}
 
 ## Conclusion
 This post showed once again the sucessful use of the BEM for solving potential flow problems. This floating cylinder might appear one more time when the removal of irregular frequencies is achieved.
