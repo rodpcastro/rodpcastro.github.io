@@ -1,6 +1,6 @@
 ---
-date: '2025-10-12'
-draft: true
+date: '2025-10-13'
+draft: false
 title: 'Algorithms for the 3D infinite-depth free-surface Green function'
 author: 'Rodrigo Castro'
 summary: 'Series expansions for the three-dimensional infinite-depth free-surface Green function and its derivatives.'
@@ -11,7 +11,7 @@ tags: ['Green Function', 'Potential Flow', 'Python']
 This post is the reproduction of an article by *Shan & Wu (2018)*, in which they derive series expansions for the three-dimensional infinite-depth free-surface Green function. The goal of this post is to set the initial steps for the future project of solving the floating body problem in three dimensions.
 
 ## Methods
-The infinite-depth free-surface Green function represents the spatial component of a velocity potential induced by a pulsating source point $q(\xi, \eta, \zeta)$ at a field point $p(x, y, z)$. Being $\bar{q}(\xi, \eta, -\zeta)$ the image of $q$ relative to the free-surface, we define the following quantities:
+The infinite-depth free-surface Green function represents the spatial component of a velocity potential induced at a field point $p(x, y, z)$ by a pulsating source point $q(\xi, \eta, \zeta)$. Being $\bar{q}(\xi, \eta, -\zeta)$ the image of $q$ relative to the free-surface, we define the following quantities:
 
 $$
 \begin{split}
@@ -26,7 +26,7 @@ where $k_0$ is the infinite-depth wave number. Between $p$ and $q$, $r$ is the h
 The infinite-depth free-surface Green function $G_\infty(p,q)$ can be expressed as
 
 $$\eq{
-G_\infty(p,q) = \frac{1}{R_{pq}} + \frac{1}{R_{p\bar{q}}} + k_0 F \pm 2\mathrm{i}\pi k_0 e^{-Y} J_0(X),
+G_\infty(p,q) = \frac{1}{R_{pq}} + \frac{1}{R_{p\bar{q}}} + k_0 F(X,Y) \pm 2\mathrm{i}\pi k_0 e^{-Y} J_0(X),
 }$$
 
 where $J_0$ is the zero-order Bessel function of the first kind. The $(-)$ sign in the last expression is associated with the time component $e^{\mathrm{i} \omega t}$, while the $(+)$ sign corresponds to $e^{-\mathrm{i} \omega t}$, and $\omega$ is the pulsating source frequency.
@@ -108,7 +108,7 @@ $$\eq{
 
 $$\eq{
 \begin{split}
-\frac{\partial^2 F}{\partial X^2} = &\phantom{+}\pi e^{-Y} \left(Y_0(X) - \frac{Y_1(X)}{X} \right) + 
+\frac{\partial^2 F}{\partial X^2} = &\phantom{+}\pi e^{-Y} \left[Y_0(X) - \frac{Y_1(X)}{X} \right] + 
 \frac{2Y}{X^2 R} \left(\frac{Y^2}{R^2} - 2 + Y\right) \\
 & - \frac{2R}{X^2} e^{-Y} \sum_{n=1}^{\infty} \frac{n X^n}{n!}
 \mathfrak{Re}\left[\mathrm{i}^{-n}\,_2F_1\left(\frac{1}{2}, -\frac{n}{2}; \frac{3}{2}; \frac{R^2}{X^2}\right)\right].
@@ -188,7 +188,7 @@ The series expansions defined in the previous topic were implemented in python a
 
 {{< figure src="images/surffxx.svg" alt="Fxx Surface Plot" align="center" >}}
 
-The results obtained from the series expansions were compared to the integral expessions $(2)$, $(3)$ and $(4)$. The Integrals were evaluated with [`scipy.quad`][scipyquad] configured with 10 digits of decimal precision. From the following figures, which show the absolute error of $F$, $F_X$ and $F_{XX}$, it is possible to see that the series expansions guarantee 8 digits of decimal precision.
+The results obtained from the series expansions were compared to the integral expessions $(2)$, $(3)$ and $(4)$. The Integrals were evaluated with [`scipy.quad`][scipyquad] configured with 10 digits of decimal precision. From the following figures, which show the absolute error of $F$, $F_X$ and $F_{XX}$, it is possible to see that the series expansions guarantee at least 8 digits of decimal precision.
 
 {{< figure src="images/errorf.svg" alt="F Absolute error" align="center" >}}
 
