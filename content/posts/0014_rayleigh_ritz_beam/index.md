@@ -1,6 +1,6 @@
 ---
-date: '2025-10-27'
-draft: true
+date: '2025-10-29'
+draft: false
 title: 'Finding natural frequencies and modes of a vibrating beam with the Rayleigh-Ritz method'
 author: 'Rodrigo Castro'
 summary: 'The Rayleigh-Ritz method is used to find the natural frequencies and modes of a propped cantilever beam.'
@@ -11,6 +11,7 @@ tags: ['Variational Calculus', Rayleigh-Ritz', 'Structural Dynamics']
 This post is the first on the topic of Variational Calculus. As an application of it, I decided to use the Rayleigh-Ritz method to find the natural frequencies and modes of a propped cantilever beam.
 
 ## Methods
+The Rayleigh-Ritz method is explained first, followed by it's application in the case a propped cantilever beam.
 
 ### Rayleigh-Ritz method
 The obtainment of the natural frequencies and modes of an oscillating system by the Rayleigh-Ritz method is fundamented on the Rayleigh's principle, which is embedded in the following quote:
@@ -38,7 +39,7 @@ $$\eq{
 \omega^2 = \frac{V_m}{\psi_m}.
 }$$
 
-To obtain the best possible estimate for other natural frequencies other than the fundamental, we derive equation $(3)$ with respect to $G_i$ and make it equal to zero, resulting in
+To obtain the best possible estimate for other natural frequencies other than the fundamental, we derive equation $(3)$ with respect to $G_i$ and make it equal to zero, resulting in the equation
 
 $$\eq{
 \frac{\partial V_m}{\partial G_i} - \omega^2 \frac{\partial \psi_m}{\partial G_i} = 0.
@@ -67,7 +68,17 @@ The Rayleigh-Ritz method will be applied for a propped cantilever beam, displaye
 
 {{< figure src="images/beam.svg" alt="Beam" align="center" >}}
 
-The admissible displacement functions $\phi_i$ that satisfy the geometric constraints of the problem are given by
+The geometric constraints of this problem are
+
+$$\eq{
+\begin{split}
+f(0) = 0, \\
+f'(0) = 0, \\
+f(L) = 0,
+\end{split}
+}$$
+
+and the admissible displacement functions $\phi_i$ that satisfy these constraints are given by
 
 $$\eq{
 \phi_i = \bar{x}^{i+2} (1-\bar{x}), \quad i = 0, 1, \ldots, n
@@ -83,7 +94,7 @@ $$\eq{
 \psi_m = \frac{m L}{2} \int_{0}^{1} (\bar{f}(\bar{x}))^2 \, d\bar{x}.
 }$$
 
-Substituting $(9)$ and $(10)$ into equation $(5)$, and after some manipulations we get
+Substituting $(10)$ and $(11)$ into equation $(5)$, and after some manipulations we get
 
 $$\eq{
 [\bar{K}]\{G\} - \lambda^4 [\bar{M}] \{G\} = \{0\},
@@ -116,7 +127,7 @@ $$\eq{
 }$$
 
 ## Results
-Natural frequencies and modes obtained with the Rayleigh-Ritz method are compared with the analytical solution, extracted from chapter 4 of the book by *Blevins* (2016). The first figure below shows the first four natural frequency parameters as a function of the number of terms used in equation $(1)$. The second figure displays the first four natural modes for eight terms used.
+Natural frequencies and modes obtained with the Rayleigh-Ritz method are compared to the analytical solution, extracted from chapter 4 of the book by *Blevins* (2016). The first figure below shows the first four natural frequency parameters as a function of the number of terms used in equation $(1)$. The second figure displays the first four natural modes for eight terms used.
 
 {{< figure src="images/freqparams.svg" alt="frequency parameters" align="center" >}}
 
