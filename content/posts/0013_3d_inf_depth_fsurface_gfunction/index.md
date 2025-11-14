@@ -175,7 +175,7 @@ $$\eq{
 \frac{\partial^2 F}{\partial X^2} = &\phantom{+}\pi e^{-Y} \left[H_0(X)+Y_0(X) - \frac{H_1(X)+Y_1(X)}{X}\right] \\
 & + \frac{2(1-e^{-Y})}{R^3} \left(1 - \frac{3X^2}{R^2}\right) \\
 & + \frac{2Y}{R^3} \sum_{n=1}^{\infty} \frac{(-1)^n (2n+1)!!}{2^n n!}
-\left(\frac{Y}{R}\right)^{2n} \left(1 - \frac{X^2 (2n+3)}{R^2}\right) B_n,
+\left(\frac{Y}{R}\right)^{2n} \left(1 - \frac{X^2 (2n+3)}{R^2}\right) B_n.
 \end{split}
 }$$
 
