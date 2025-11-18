@@ -4,7 +4,7 @@ draft: false
 title: 'Finding natural frequencies and modes of a vibrating beam with the Rayleigh-Ritz method'
 author: 'Rodrigo Castro'
 summary: 'The Rayleigh-Ritz method is used to find the natural frequencies and modes of a propped cantilever beam.'
-tags: ['Variational Calculus', Rayleigh-Ritz', 'Structural Dynamics']
+tags: ['Variational Calculus', 'Rayleigh-Ritz', 'Structural Dynamics']
 ---
 
 ## Introduction
