@@ -1,9 +1,9 @@
 ---
-date: '2025-12-27'
-draft: true
+date: '2025-12-28'
+draft: false
 title: 'Approximating functions with Chebyshev polynomials'
 author: 'Rodrigo Castro'
-summary: 'An improper integral with three parameters is approximated to 14 digits of precision with Chebyshev polynomials.'
+summary: 'An improper integral with three parameters is approximated to 14 digits of decimal precision with Chebyshev polynomials.'
 tags: ['Chebyshev', 'Approximation Theory', Julia']
 ---
 
@@ -31,7 +31,7 @@ $A \in [0, 0.5]$, $B \in [0, 1]$ and $H \in [10^{-2}, 10^{2}]$ are dimensionless
 
 The integral in $(1)$ must be evaluated by contour integration to avoid numerical issues close to the poles of $f$. The path of integration suggested by *Mackay* (2021) is the line connecting the points $\{0, H+i, H+1, \infty\}$.
 
-The numerical computation of this integral can be performed in [Julia] with the [Integrals.jl] library, with absolute and relative tolerances of $10^{-16}$ to achieve machine double precision, as displayed below:
+The numerical computation of this integral can be performed in [Julia] with the [Integrals.jl] library, with absolute and relative tolerances of $10^{-16}$ to achieve double precision results, as displayed below:
 
 ```julia
 using Integrals
@@ -86,11 +86,55 @@ function T(n::Int, x::Float64)
 end
 ```
 
+Using this base of polynomials, $L_1$ can be approximated by the following series
 
+$$\eq{
+L_1(x, y, z) = \sum_{p=0}^{\infty} \sum_{q=0}^{\infty} \sum_{r=0}^{\infty} a_{pqr} T_p(x) T_q(y) T_r(z),
+}$$
 
+where $(x, y, z) \in [-1, 1]^3$ are the transformed version of the variables $(A, B, \log_{10} H)$ to satisfy the standard domain of Chebyshev polynomials.
+
+Since $T_n(x) \le 1$ for $x \in [-1, 1]$, the series $(4)$ can be truncated for absolute values of the coefficients $a_{pqr}$ lower than the intended precision. To calculate these coefficients, the Julia library [FastChebInterp.jl] was used.
+
+`FastChebInterp` provides two options to obtain the coefficients $a_{pqr}$: interpolation with `chebinterp` and fitting with `chebregression`. The interpolation option was tried first, but crashed the computer before getting close to the desired precision, probably due to the inconsistent results obtained with `QuadGKJL`, as explained earlier. Fitting presented itself as the best option, because it smooths out these deviations, and never crashed my computer.
+
+To reduce the total number of coefficients and, consequently, the computational cost of expression $(4)$, the range of $\log_{10} H$ was subdvided in three parts: $[-2, 0.15]$, $[0.15, 1]$ and $[1, 2]$. The following code computes the coefficients for the first part of the domain, and the same process was followed for the other two parts.
 
 ```julia
-function L₁_cheby(coefs::Array{Float64, 3}, A::Float64, B::Float64, logH::Float64)
+using FastChebInterp  # version 1.2.0
+
+A1, A2 = 0.0, 0.5
+B1, B2 = 0.0, 1.0
+logH1, logH2 = -2.0, 0.15
+
+# Number of points for regression.
+np, nq, nr = 15, 19, 41
+
+lb, ub = [A1, B1, logH1], [A2, B2, logH2]
+x = vec(chebpoints((np, nq, nr), lb, ub))
+c = chebregression(x, L₁.(x), lb, ub, (np, nq, nr))
+
+# The coefficients are stored in the coefs attribute.
+# coefs.size returns (16, 20, 42)
+coefs = c.coefs;
+
+# I stopped increasing np, nq and nr when the regression computed
+# coefficients lower than machine epsilon for double precision.
+# maximum(coefs[end, :, :]) returns 3.820990154979531e-17
+# maximum(coefs[:, end, :]) returns 2.1863957579554176e-16
+# maximum(coefs[:, :, end]) returns 2.2126464867121333e-16
+```
+
+The size of the coefficients arrays in each domain are $(16, 20, 42)$, $(17, 21, 42)$ and $(17, 21, 40)$, respectively. The coefficients can then be stored in a file and expression $(4)$ can be evaluated in Julia in the following way for the first domain, and similarly for the other two.
+
+```julia
+function L₁_cheby(A::Float64, B::Float64, logH::Float64)
+    # The coefficients are defined in the global scope.
+
+    A1, A2 = 0.0, 0.5
+    B1, B2 = 0.0, 1.0
+    logH1, logH2 = -2.0, 0.15  # Domain 1
+
     x = (2A - A2 - A1) / (A2 - A1)
     y = (2B - B2 - B1) / (B2 - B1)
     z = (2logH - logH2 - logH1) / (logH2 - logH1)
@@ -98,21 +142,28 @@ function L₁_cheby(coefs::Array{Float64, 3}, A::Float64, B::Float64, logH::Floa
     Tx = reshape([T(p, x) for p in 0:size(coefs, 1)-1], :, 1, 1)
     Ty = reshape([T(q, y) for q in 0:size(coefs, 2)-1], 1, :, 1)
     Tz = reshape([T(r, z) for r in 0:size(coefs, 3)-1], 1, 1, :)
-    
-    sum(coefs .* Tx .* Ty .* Tz)
+
+    return sum(coefs .* Tx .* Ty .* Tz)
 end
 ```
 
-To approximate $L_1$ with a base of [Chebyshev polynomials][cheby] of the first kind, the Julia library [FastChebInterp.jl] was used. This library provides two options to obtain an approximation function: interpolation with `chebinterp` and fitting with `chebregression`. The interpolation option was tried first, but crashed the computer before getting close to the desired precision, probably because of the inconsistent results obtained with `QuadGKJL` as explained earlier. Fitting presented itself as the best option, because it smooths out these inconsistencies, and never crashed my computer.
-
 ## Results
+The three figures below present the maximum absolute value of the coefficients along each axis of the coefficients array, which indicates the total number of coefficients necessary in the variables $A$, $B$ and $\log_{10} H$ to approximate $L_1$ with high level of precision.
 
+{{< figure src="images/max_abs_coefs1.svg" alt="Coefs Domain 1" align="center" >}}
+
+{{< figure src="images/max_abs_coefs2.svg" alt="Coefs Domain 2" align="center" >}}
+
+{{< figure src="images/max_abs_coefs3.svg" alt="Coefs Domain 3" align="center" >}}
+
+The Chebyshev approximation was tested against the original expression $(1)$ for 30 points along $A$, 40 points along $B$ and 80 points along $\log_{10} H$, providing a total of 96000 test points. The mean absolute residue was of $1.07 \times 10^{-15}$, with a standard deviation of $8.78 \times 10^{-16}$. Also, 99.99% of the residual data is smaller than $10^{-14}$, making the approximation function precise to 14 decimal digits. In addition to being very precise, the approximated version is, on average, 13 times faster than the original one.
 
 ## Conclusion
-
+Approximation with Chebyshev polynomials proved to be very precise and efficient. However, the algorithm presented in this post can be further improved in speed. The coefficients arrays still have several elements smaller than machine precision, making their use unnecessary. For example, 43% of the coefficients in domain 1 are smaller than $10^{-17}$, and similar numbers are found in the other two domains.
 
 ## References
 1. Ed Mackay. 2021. The Green function for diffraction and radiation of regular waves by two-dimensional structures. European Journal of Mechanics - B/Fluids 87 (May 2021), 151–160. https://doi.org/10.1016/j.euromechflu.2021.01.012
+2. Steven Johnson. 2024. FastChebInterp.jl. https://github.com/JuliaMath/FastChebInterp.jl.
 
 ## Appendices
 * {{< post_files_view >}}
