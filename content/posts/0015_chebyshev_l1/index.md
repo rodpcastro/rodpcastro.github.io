@@ -4,7 +4,7 @@ draft: false
 title: 'Approximating functions with Chebyshev polynomials'
 author: 'Rodrigo Castro'
 summary: 'An improper integral with three parameters is approximated to 14 digits of decimal precision with Chebyshev polynomials.'
-tags: ['Chebyshev', 'Approximation Theory', Julia']
+tags: ['Chebyshev', 'Approximation Theory', 'Julia']
 ---
 
 ## Introduction
