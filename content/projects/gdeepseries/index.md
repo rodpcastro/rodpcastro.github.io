@@ -8,7 +8,7 @@ tags: ['Green Function', 'Fortran', 'Potential Flow']
 ---
 
 ## Introduction
-This Fortran library computes the three-dimensional infinite-depth free-surface Green function according to the series expansions defined in the work of [*Shan* and *Wu* (2018)](#reference).
+[GDeepSeries] is a Fortran library that computes the three-dimensional infinite-depth free-surface Green function according to the series expansions defined in the work of [*Shan* and *Wu* (2018)](#reference).
 
 An overview of the expressions implemented in this library can be found [here][src]. Alternatively, a Python implementation of the series expansions can be found in this [blog post][rpcgds].
 
@@ -27,6 +27,7 @@ The GDeepSeries code is distributed under the MIT License (see [LICENSE] file).
 **Important Dependency Notice**: This project depends on [ColSpecF], which is distributed under multiple licenses. Review [ColSpecF's license][csf-license] for details.
 
 <!-- links -->
+[gdeepseries]: https://github.com/rodpcastro/gdeepseries
 [colspecf]: ../colspecf/
 [src]: https://github.com/rodpcastro/gdeepseries/tree/main/src/README.md#infinite-depth-free-surface-green-function
 [license]: https://github.com/rodpcastro/gdeepseries/blob/main/LICENSE
