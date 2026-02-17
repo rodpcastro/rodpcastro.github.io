@@ -46,7 +46,7 @@ L_1(x, y, z) \simeq \sum_{p=0}^{n_p} \sum_{q=0}^{n_q} \sum_{r=0}^{n_r} a_{pqr} T
 
 where $(x, y, z) \in [-1, 1]^3$ is the transformed version of the variables $(A, B, \log_{10} H)$ to satisfy the standard domain of Chebyshev polynomials. The coefficients $a_{pqr}$ are computed with the [FastChebInterp.jl] library, as described in a [previous post][chebyl1].
 
-The range of $\log_{10} H$ is subdvided in three parts: $[-2, 0.15]$, $[0.15, 1]$ and $[1, 2]$. The three subdomains have the same number of coefficients $(n_p, n_q, n_r) = (17, 21, 42)$ and are organized in the following composite type and saved to disk and loaded from it with the [JLD2.jl] library. The three subdomains are named `L₁1`, `L₁2` and `L₁3`, respectively.
+The range of $\log_{10} H$ is subdvided in three parts: $[-2, 0.15]$, $[0.15, 1]$ and $[1, 2]$. The three subdomains have the same number of coefficients $(n_p, n_q, n_r) = (16, 20, 41)$ and are organized in the following composite type and saved to disk and loaded from it with the [JLD2.jl] library. The three subdomains are named `L₁1`, `L₁2` and `L₁3`, respectively.
 
 ```julia
 using StaticArrays
