@@ -1,6 +1,6 @@
 ---
 date: '2026-02-16'
-draft: true
+draft: false
 title: 'Evaluating Chebyshev series and its derivatives with the Clenshaw algorithm'
 author: 'Rodrigo Castro'
 summary: 'A three-dimensional Chebyshev series, its gradient and Hessian are evaluated with the Clenshaw algorithm.'
