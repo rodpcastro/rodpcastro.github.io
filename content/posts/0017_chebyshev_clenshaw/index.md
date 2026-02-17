@@ -177,12 +177,12 @@ function hessian_clenshaw(f::ChebyshevSeries{T, N}, x::T) where {T, N}
 end
 ```
 
-The function above handles Chebyshev series of any dimension and returns the series and its derivatives with respect to the last dimension evaluated at a value `x` of its last dimension. So, for the three-dimensional case of $L_1$ defined in $(3)$, evaluating this function recursively for $z$, $y$ and $x$ provides the the values of $L_1$, its gradient and Hessian matrix at a point $(x, y, z) \in [-1, 1]^3$.
+The function above handles Chebyshev series of any dimension and returns the series and its derivatives with respect to the last dimension evaluated at a value `x` of its last dimension. So, for the three-dimensional case of $L_1$ defined in $(3)$, evaluating this function recursively for $z$, $y$ and $x$ provides the values of $L_1$, its gradient and Hessian matrix at a point $(x, y, z) \in [-1, 1]^3$.
 
 See the [source code](#appendices) for more details on how this is done.
 
 ## Results
-In the following `L₁c` represents $L_1$ as computed by the Chebyshev series $(3)$, and `∇L₁c` and `HL₁c` are its gradient and Hessian matrix, respectively. The function $L_1$ was computed for $10^5$ points in the domain of interest, first with the [function that uses numerical integration](#function), then with the [Clenshaw algorithm](#clenshaw-algorithm) described previously. The output below shows the mean absolute error between the two.
+In the following `L₁c` represents $L_1$ as computed by the Chebyshev series $(3)$, and `∇L₁c` and `HL₁c` are its gradient and Hessian matrix, respectively. The function $L_1$ was computed for $10^5$ points randomly distributed in the domain of interest, first with the [function that uses numerical integration](#function), then with the [Clenshaw algorithm](#clenshaw-algorithm) described previously. The output below shows the mean absolute error between the two.
 
 ```console
 L₁c mean absolute error = 1e-15
