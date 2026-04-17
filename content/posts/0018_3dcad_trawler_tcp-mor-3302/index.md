@@ -1,7 +1,7 @@
 ---
 date: '2026-03-28'
 draft: false
-title: 'Modelling a fishing vessel hull in 3D CAD software'
+title: 'Modelling a fishing vessel hull in FreeShip'
 author: 'Rodrigo Castro'
 summary: 'A trawler lines plan is used to model its 3D hull surface in FreeShip.'
 tags: ['FreeShip', 'Computer Aided Design']
