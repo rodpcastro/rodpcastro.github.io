@@ -19,7 +19,7 @@ Next, we draw the edges of the hull in the sheer and half-breadth planes, respec
 
 {{< figure src="images/edges_projections.png" alt="Edges Projections" align="center" >}}
 
-Now these curves are extruded and the resulting surfaces are intersected to obtain the edges in three-dimensional space, as depicted in the image below.
+Now these curves are extruded and the resulting surfaces are intersected with the [`section`][fc_partsect] tool to obtain the edges in three-dimensional space, as depicted in the image below.
 
 {{< figure src="images/edges_intersections.png" alt="Edges Intersections" align="center" >}}
 
@@ -57,4 +57,5 @@ Despite FreeCAD being a modern and constantly maintained software, its surface m
 [fc_rsurface]: https://wiki.freecad.org/Part_RuledSurface
 [fc_fsurface]: https://wiki.freecad.org/Surface_Filling/en
 [fc_slcapart]: https://wiki.freecad.org/Part_SliceApart
+[fc_partsect]: https://wiki.freecad.org/Part_Section
 [curveswb]: https://github.com/tomate44/CurvesWB
